@@ -1,0 +1,60 @@
+** Link
+[[https://levistrauss.atlassian.net/jira/software/c/projects/LSEDE/boards/990?assignee=62569b0656e5a8006dd9b4ad][My LSEDE Primary Jira Scrum Board]]
+
+[[https://levistrauss.atlassian.net/wiki/spaces/LDAA/pages/1478492477/Guidelines+and+how-to+tutorials][LSE Tutorials, Videos, Guideslines and Onboarding Stuff]]
+
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375426111/DE+GAO+holiday][Holiday Planning DE GAO]]
+
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2376698475/DE+GAO+All+Accesses+to+Request][Levis links for request onboarding]]
+
+[[https://levi.service-now.com/services?id=sc_cat_item&sys_id=04e418bfec021a40493f543a842aadd3][Add or Remove Users to Active Directory Group]]
+
+[[https://www.reetro.app/board/5fb456a73dbc220016938187/625ff5cac1c782001772870c][reetro sprint retro]]
+
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375423458/DE+GAO+Onboarding][DE GAO Onboarding]]
+
+[[https://lse-sphinx.aws.levi.com/lse_airflow_datalake/lse_airflow_datalake.html][LSE Data Catalog]]
+
+[[https://3257530455382263.3.gcp.databricks.com/?o=3257530455382263#setting/clusters][LSE Databricks]]
+
+[[https://console.cloud.google.com/storage/browser?authuser=2&project=levi-dataocean-pp&prefix=][Levi Dataocean Preprod]]
+
+[[https://10.102.144.15:11000/home/][Dataiku Temporary GCP]]
+
+[[https://dataiku-dev.levi.com/home/][AWS Dataiku Dev]]
+
+[[https://dataiku-prod.levi.com/project-list/][AWS Dataiku Prod]]
+
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2416804330/GA.+App+Maintenance][Streamlit docker confluence]]
+
+[[https://towardsdatascience.com/continuous-deployment-pipeline-using-github-actions-docker-and-aws-185bb3bf41b][Docker AWS GITHUB]]
+
+[[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html][How to use an external ID when granting access to your AWS resources to a third party]]
+
+[[https://support.cloudbees.com/hc/en-us/articles/360027893492-How-To-Authenticate-to-AWS-with-the-Pipeline-AWS-Plugin][How To Authenticate to AWS with the Pipeline AWS Plugin]]
+
+[[https://faun.pub/docker-build-push-with-declarative-pipeline-in-jenkins-2f12c2e43807][Push to ECR from Jenkins]]
+
+[[https://stackoverflow.com/a/61933740/3743027][ECR credentials]]
+
+[[https://stackoverflow.com/questions/70698829/cannot-access-a-docker-webapp-on-ec2-from-a-web-browser][Build and run a docker on EC2]]
+
+[[https://levistrauss.atlassian.net/wiki/spaces/CDI/pages/823007847/Build+docker+image+and+publish+to+ECR][Jenkines Code: Build docker image and publish to ECR]]
+
+[[https://levi.sharepoint.com/:x:/s/GlobalPricePromo/Ee4c9spHpahFlmch4NuZAygBYk8AI-8I5YGAMybi-nofqg][Dataiku migration dataset excel]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2 @@
+* Conceptual Questions
+[[https://www.tutorialspoint.com/difference-between-std-vector-and-std-array-in-cplusplus][c++: vector vs array]]: 1. deletable 2. memory allocation 3. fixed size

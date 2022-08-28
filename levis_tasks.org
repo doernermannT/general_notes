@@ -1,0 +1,54 @@
+* Jira
+** PP
+*** 2965
+DROP TABLE IF EXISTS FEAT_PP_L1_STG.PRODUCT_MASTER_FROM_ELASTICITY_CURVES_DLY;
+DROP TABLE IF EXISTS FEAT_PP_L1.PRODUCT_MASTER_FROM_ELASTICITY_CURVES_DLY;
+
+** Planning, Allocation and Inventory
+**** DONE [[https://levistrauss.atlassian.net/browse/LSEDE-3356][LSEDE-3356 Connect Airflow DEV (K8S) with Oracle DB holding SAS_STAGE data]]
+CLOSED: [2022-05-24 Tue 12:30]
+
+Log:
+1. <2021-05-20 Thu> Set up oracle connection with DevOps, Isra. Figured out that datalake has a different
+   airflow than feature store.
+2. <2022-05-20 Fri> Firewall needs to be lifted for the Oracle connection. This will have to
+   wait for the latest until <2022-05-24 Tue>
+3. <2022-05-24 Tue> Done after firewall is lifted and data checked on S3.
+
+**** REVIEW [[https://levistrauss.atlassian.net/browse/LSEDE-3355][LSEDE-3355 Automate ingestion of SAS_STAGE.PG_GRIDS_YOURXX data from Oracle into cloud III]]
+Log:
+1. <2022-05-24 Tue> Working on naming convention and team replacement of email
+2. <2022-05-25 Wed> dbdiagram done
+**** IN-PROGRESS [[https://levistrauss.atlassian.net/browse/LSEDE-3051][LSEDE-3051 Update SGMT logic to get sizes from SAS_STAGE.PG_GRIDS_YOURXX]]
+Ref:
+[[/Users/t.ge/Documents/work/Levis/tasks/LSE_AIRFLOW_DATALAKE/sql/ddl/DB_GLD_SIZ/HANA_LSE_SIZ_SGMT_CURR_MTH_DLY.sql][ddl]]
+[[http://dev-2-eu-airflow.aws.levi.com/tree?dag_id=dev_gg_lod_hana_lse_siz_sgmt_curr_mth_dly][airflow dag in dev]]
+[[https://github.levi-site.com/LSE/LSE_AIRFLOW_DATALAKE/compare/release...feature/LSEDE-3090-pg_grids_sas_ingestion][github pr comparison]]
+[[s3://lsedl-dev-gold/Gold/LSE/SIZ/SGMT/HANA_LSE_SIZ_SGMT_CURR_MTH_DLY/][s3 dev]]
+**** IN-PROGRESS [[https://levistrauss.atlassian.net/browse/LSEDE-3355][LSEDE-3355 Automate ingestion of SAS_STAGE.PG_GRIDS_YOURXX data from Oracle into cloud III]]
+**** IN-PROGRESS [[https://levistrauss.atlassian.net/browse/LSEDE-3340][LSEDE-3340 Dataiku migration Due in data]]
+
+References:
+[[https://github.levi-site.com/LSE/lse_storetostore/blob/dev/src/features/due_in_data.py][Github code for duein table: current dataiku and dsp]]
+
+table mapping:
+ean: DB_LSEANALYTICS_RAW.EANCODES
+
+Log:
+1. <2022-05-20 Fri> Dicuss with Elena about the ticket. Task: validate the DSP
+   table against the current one in Dataiku.
+   The way to produce both can be found in the commented out section of [[https://github.levi-site.com/LSE/lse_storetostore/blob/dev/src/features/due_in_data.py][Github code for duein table: current dataiku and dsp]]
+
+2. <2022-05-23 Mon> Worked with Grzegorz and Elena on the ticket. 1. Validated the dsp data
+   against the final dueIn_join (not match). 2. Found data for some dates are missing ->
+   reach out to the US guy. 3. planned_delivery_date in DK = RDD. 4. Should be able to start
+   migration tomorrow
+   
+
+**** TODO [[https://levistrauss.atlassian.net/browse/LSEDE-3124][LSEDE-3124 Replicate the VIR pipeline on DSP]]
+Log:
+1. <2022-06-05 Sun> Data source of hana_sp, HANA_LSE_VIR_TXN_PC9_PG_DAY_DLY (s3://ldl-preprod-silver/Silver/LSE/VIR/Transaction/HANA_LSE_VIR_TXN_PC9_PG_DAY_DLY),
+   refreshes at 12:06 everyday. This schedule causes the delay of hana_sp around
+   12:06 daily.
+
+   VIR_TXN is not yet migrated in LSE.

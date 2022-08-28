@@ -1,0 +1,30 @@
+* Levis task
+# Industrialize pipelien etl, howard
+https://github.levi-site.com/GAI/AIRFLOW_FEATURE_STORE/pull/33/files
+
+Scope:
+
+s3://lse-ds-preprod/LSE_PRICE_PROMO_OPTIMIZATION/Inbound/Products/Product_Master_From_Elasticity_Curves/
+
+s3://lse-ds-preprod/boto3/PPELASTICITYCURVES/stage/product_master_from_elasticity_curves/
+https://dataiku-dev.levi.com/projects/PPELASTICITYCURVES/datasets/product_table/settings/
+
+product_master:
+s3://dataiku-prod/prod/LSE_DIM_PRODS/HANA_ProductMaster_copy_prepared_joined_prepared/*
+conso_levi:
+s3://dataiku-prod/prod/DATAENGINEERINGCONSO/CONSO_DataEngineering/*
+
+# preprocessing
+https://dataiku-dev.levi.com/projects/PPELASTICITYCURVES/libedition
+
+# Ketan Hana schema
+https://github.levi-site.com/GAI/AIRFLOW_FEATURE_STORE/blob/6f7c4befedf6c3056d5a0946a4425885587ccd34/sql/ddl/FEAT_PP_L1/HANA_PRODUCT_MASTER_COPY_WITH_HEADERS.sql
+
+
+[[http://gao-feat-dev.aws.levi.com:8080/home][airflow dev-gg]]
+
+[[https://github.levi-site.com/GAI/AIRFLOW_FEATURE_STORE][github gai airflow feature store]]
+
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2380891573/GA.AGR+overview][AGR Overview and chapters]]
+
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2394194105/Feature+Store+Data+Dictionary+brain+dump][all links and access to tools: airflow, data dictionary ...]]

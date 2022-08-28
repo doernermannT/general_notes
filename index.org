@@ -1,0 +1,931 @@
+* Tasks
+** TODO [For container in org mode] https://emacs.stackexchange.com/questions/64371/org-mode-open-link-in-browser-directly 
+   DEADLINE: <2021-11-17 Wed>
+   [2021-11-16 Tue]
+   [[file:~/org/notes.org::*Landing Zone][Landing Zone]]
+** DONE [#A] Steffen [Data Engineering Meeting]: open url directly in a specific container
+   CLOSED: [2021-12-06 Mon 10:21] SCHEDULED: <2021-11-17 Wed 10:00>
+   1. Advantages: get lazierrrrr :)
+   2. Requirement: firefox + [[https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/][open-url-in-container]] + strict name consumer_DEV...
+      ext+container:name=provider_DEV&url=https://eu-west-1.console.aws.amazon.com/cloudwatch/home?region=eu-west-1#logsV2:log-groups/log-group/$252Faws-glue$252Fpython-jobs$252Ferror/log-events/jr_82a824d39fadae12ca603b7e5e6fe94981420988aaec59ecd751ebfb418f93a4
+      ext+container:name=consumer_DEV&url=https://eu-west-1.console.aws.amazon.com/cloudwatch/home?region=eu-west-1#logsV2:log-groups/log-group/$252Faws-glue$252Fpython-jobs$252Ferror/log-events/jr_4936f52a7f8874a19f2f69047a2c8d0c3814916074a230f6e974a956e9f0ce68
+
+   8 am (heute nur) und 15 pm  
+   
+   [2021-11-16 Tue]
+   [[file:~/org/notes.org::*Landing Zone][Landing Zone]]
+** DONE Ask what [[file:~/Documents/work/ICE_C1_Repo/ice-standard-functions/standard_functions_python/data_io.py][write_on_prep]] really means vs write_prep
+   CLOSED: [2021-11-22 Mon 13:52] SCHEDULED: <2021-11-17 Wed 10:00>
+   [2021-11-16 Tue]
+   [[file:~/org/notes.org::*ext+container:name=provider_DEV&url=https://s3.console.aws.amazon.com/s3/buckets/cdh-de-sales-landing-zone-src-tb7c/?region=eu-west-1&tab=objects][ext+container:name=provider_DEV&url=https://s3.console.aws.amazon.com/s3/buckets/cdh-de-sales-landing-zone-src-tb7c/?region=eu-west-1&tab=objects]]
+** DONE [#A] Max: ask
+   CLOSED: [2021-11-22 Mon 13:53] DEADLINE: <2021-11-17 Wed>
+   1. parquet -> df -> need srt again?
+   2. 3 kpis with teilreport + monat -> just submit or join with the original table?
+   3. Ask write format [[file:~/Documents/work/ICE_C1_Repo/ice-consumer/code/semantic/scripts/sem_fp5_f_finance_kpi_cor.py][sample kpi file]]
+
+   # 'buno',
+   # 'marke',
+   # 'teilreport',
+   # 'monat',
+
+   # 'anzahl_auslauf',
+   # 'csc_anz_anschluss',
+   # 'sum_anzahl_auslauf' (--> KPI: Ausläufer)
+   # 'sum_csc_anz_anschluss' (--> KPI: CarSalesConversion Einheiten)
+   # 'csc_in_percent' (--> KPI: CarSalesConversion in %)
+   
+   # see msg from max about srt
+   # # BMW GROUP also.
+   # # group by union buno
+
+   args:
+   target_table = pmh_sf_leasing_finanzierung
+   
+   write to the consumer semantric
+   name of the script:
+
+   [3:15 PM] HEILGEMEIR Maximilian
+   target_bucket = ice-semantic-80...66-eu-west-1
+
+   [3:19 PM] HEILGEMEIR Maximilian
+   script name: sem_pmh_sf_leasing_finanzierung
+
+   sales_glue_jobs.tf
+   sales_wf_sem_ts_daily_ready.tf
+   
+   [2021-11-16 Tue]
+   [[file:~/org/notes.org::*ext+container:name=provider_DEV&url=https://s3.console.aws.amazon.com/s3/buckets/cdh-de-sales-landing-zone-src-tb7c/?region=eu-west-1&tab=objects][ext+container:name=provider_DEV&url=https://s3.console.aws.amazon.com/s3/buckets/cdh-de-sales-landing-zone-src-tb7c/?region=eu-west-1&tab=objects]]
+** DONE POC: 1. Fill in the names of completed table on confluence
+   CLOSED: [2021-11-22 Mon 13:53] DEADLINE: <2021-11-19 Fri>
+   2. Update the POC table with readme to do a version control with the group 
+   [2021-11-17 Wed]
+   [[file:~/org/notes.org::*Org Mode][Org Mode]]
+** DONE MAX: 1. update what Pushpraj said about csv#.
+   CLOSED: [2021-11-21 Sun 18:37] DEADLINE: <2021-11-17 Wed 15:00>
+   My proposel: a. find out the reason of the lock
+                b. update read_batch -> pattern can take regex
+   [2021-11-17 Wed]
+   [[file:~/org/notes.org::*Org Mode][Org Mode]]
+** DONE Check multi terminal 
+   CLOSED: [2021-11-21 Sun 18:37] DEADLINE: <2021-11-18 Thu>
+   [2021-11-17 Wed]
+   [[file:~/org/notes.org::*Org Mode][Org Mode]]
+** TODO Org Mode: how to decrement the level of selected headers by 1 and 
+   assign them to a higher level header
+   [2021-11-17 Wed]
+   [[file:~/org/notes.org::*Emacs Hotkeys][Emacs Hotkeys]]
+** TODO How to recursively added quotation to every element in a list
+   [2021-11-18 Thu]
+   [[file:~/org/notes.org::*Org Mode][Org Mode]]
+** DONE Ask the contact info from Koulton and share restaurant info
+   CLOSED: [2021-11-21 Sun 18:37] SCHEDULED: <2021-11-19 Fri>
+   [2021-11-18 Thu]
+   [[file:~/org/notes.org::*Org Mode][Org Mode]]
+** DONE Ask Anni about how to join the NAVI
+   CLOSED: [2021-11-21 Sun 18:37] SCHEDULED: <2021-11-19 Fri>
+   [2021-11-18 Thu]
+   [[file:~/org/notes.org::*Org Mode][Org Mode]]
+** DONE Max: which workflow is for him better: local (testing) vs pr (no testing)
+   CLOSED: [2021-11-21 Sun 18:36]
+   Answer: whenever ready do both local and git pull
+   SCHEDULED: <2021-11-21 Sun>
+   [2021-11-19 Fri]
+** DONE Ask logging 
+   CLOSED: [2021-12-01 Wed 13:34] SCHEDULED: <2021-12-01 Wed>
+   [2021-11-19 Fri]
+** DONE [[https://stackoverflow.com/questions/13981500/how-can-i-get-the-name-of-the-script-calling-the-function-in-python][Get the name of the caller frame]] 
+   CLOSED: [2022-04-25 Mon 09:38]
+   [2021-11-19 Fri]
+   [[file:~/Documents/work/ICE_C1_Repo/ice-standard-functions/common_functions/logger.py::send_interval=10,]]
+** DONE Diana table wrong
+   CLOSED: [2022-04-25 Mon 09:38] SCHEDULED: <2022-04-28 Thu 11:15>
+   mt_after_impute_missing_values_for_cash_include_btsdemo uses raw_mt not cleaned_mt
+   [[file:task_prompts.org][See work of flow here]]
+   [2021-11-21 Sun]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/pipeline/data.py::# Save output to cache]]
+** DONE Finished:
+   CLOSED: [2021-11-22 Mon 13:53]
+   mt_after_impute_missing_values_for_cash.py
+   mt_after_impute_missing_values_for_cash_include_btsdemo.py
+   [2021-11-21 Sun]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/data_cleaning/preprocessing/mt_after_impute_missing_values_for_cash/mt_after_impute_missing_values_for_cash.py::# If we still have missing cash down fields for cash clients we decrease the granulatiry by]]
+** IN-PROGRESS Cache imputation causes the problem -> put it into the ML step
+   Reason: (py glue 8 G)
+   Prepro: dashboard 
+   [2021-11-22 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/data_cleaning/preprocessing/mt_after_impute_missing_values_for_cash/mt_after_impute_missing_values_for_cash.py][file:~/Documents/work/dynamic_pricing_general/dynamicPricing/data_cleaning/preprocessing/mt_after_impute_missing_values_for_cash/mt_after_impute_missing_values_for_cash.py]]
+** DONE Diana: raw_lease and cleaned clease altogether (make a notes about raw_lease)
+   CLOSED: [2021-12-01 Wed 13:34]
+   Send her the scripts before lunch
+   SCHEDULED: <2021-11-22 Mon>
+   [2021-11-22 Mon]
+   [[file:~/Documents/work/ICE_C1_Repo/ice-provider/code/preparing/pre_lz702_leasing.py::sf.write_prep(lease, target='LANDING_ZONE', table_name="pre_lz702_leasing", data_status=lease_earliest_start, out_of_date=is_out_of_date)]]
+** DONE Push to the code commit 
+   CLOSED: [2021-12-01 Wed 13:34]
+   [2021-11-22 Mon]
+   [[file:~/Documents/work/ICE_C1_Repo/ice-provider/code/preparing/pre_lz702_leasing.py::sf.write_prep(lease, target='LANDING_ZONE', table_name="pre_lz702_leasing", data_status=lease_earliest_start, out_of_date=is_out_of_date)]]
+** DONE Read: [[https://stackoverflow.com/questions/4096580/how-to-make-emacs-reload-the-tags-file-automatically][Auto reload tag file upon start]]
+   CLOSED: [2022-04-25 Mon 09:39] DEADLINE: <2021-11-23 Tue>
+   [2021-11-22 Mon]
+** DONE [Data Engineering: Diana]: 2 emails per day, only one: 8 or 15? Who else has specific requirement?
+   CLOSED: [2021-12-01 Wed 13:34]
+   Migrate errors to the dashboard -> persist to aws rds -> some aws dashboard
+   Advantages: do some trend analysis, go back history, what jobs failed/succeeded most
+   SCHEDULED: <2021-11-24 Wed 11:15>
+   [2021-11-23 Tue]
+** IN-PROGRESS [poc: Diana, Erik] Problems:
+   SCHEDULED: <2021-11-25 Thu 11:15>
+   1. Memory not enough (talked on Monday)
+      Sol: 1. large sagemaker instance 64
+           2. Separate dashboard and preprocessing parts
+           3. into pyspark
+   2. Tables cant be read in Sagemaker:
+      a. raw_ivsr = sf.read_prep(database_name = 'de_sales_his_cube_pre', table_name = 'his_ivsr_ist')
+      
+   MemoryError: Unable to allocate 72.3 MiB for an array with shape (9480682,) and data type object
+   [2021-11-23 Tue]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/data_cleaning/preprocessing/opt_sales_target/sem_opt_sales_target.py][file:~/Documents/work/dynamic_pricing_general/dynamicPricing/data_cleaning/preprocessing/opt_sales_target/sem_opt_sales_target.py]]
+** TODO Lunch date template:
+Hallo Laura,
+
+ich bin Tianyi (Standort: lilienthalallee). Gerade mache ich eine Praktikum. Ich habe deinen Beitrag auf ,,Lunchpartner gesucht" gesehen.
+
+Wollen wir diesen Donnerstag zusammen zum Kaffee gehen (ab 13:30)? Ich fahre am Donnerstag zum FIZ zu einem Meeting. Daher finde ich super weiter um neue Leute kennenzulernen.
+
+Liebe Grüße,
+
+Tianyi Ge
+   [2021-11-23 Tue]
+** DONE 1. Deliverables:
+   CLOSED: [2021-12-01 Wed 13:34] SCHEDULED: <2021-11-25 Thu 11:15>
+   1. [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/data_cleaning/preprocessing/opt_sales_target/sem_opt_sales_target.py][sem_opt_sales_target.py]] done -> need ivsr to be read for testing
+   [2021-11-23 Tue]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/data_cleaning/preprocessing/opt_sales_target/sem_opt_sales_target.py::import sys]]
+** DONE [[https://atc.bmwgroup.net/confluence/pages/viewpage.action?pageId=1756890879][Code commit setup]]: for poc use case
+   CLOSED: [2021-12-01 Wed 13:35] DEADLINE: <2021-11-24 Wed>
+   [2021-11-23 Tue]
+   [[file:~/Documents/tasks.txt::CI/CD already setup -> check on code commit]]
+** DONE Talk to Pushpraj about csv#
+   CLOSED: [2021-12-01 Wed 13:35] DEADLINE: <2021-11-24 Wed>
+   [2021-11-24 Wed]
+   [[file:~/org/index.org::*[Data Engineering: Diana]: 2 emails per day, only one: 8 or 15? Who else has specific requirement?][[Data Engineering: Diana]: 2 emails per day, only one: 8 or 15? Who else has specific requirement?]]
+** DONE Out_of_date check in raw_sps?
+   CLOSED: [2021-12-01 Wed 13:35]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/ingestion/pre_lz702_raw_sps.py][raw_sps.py]]
+   [2021-11-24 Wed]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/ingestion/pre_lz702_raw_sps.py::sf.write_prep(sps, target='LANDING_ZONE', table_name="pre_lz702_sps_wo_sdwh", out_of_date=False)]]
+** DONE Diana: 1. table name from raw_sps and raw_leasing
+   CLOSED: [2021-12-01 Wed 13:35] DEADLINE: <2021-11-24 Wed 17:00>
+   [2021-11-24 Wed]
+** DONE Diana, Group: We need to create a sps raw-like -> augmented_sps in prep
+   CLOSED: [2021-12-01 Wed 13:35] SCHEDULED: <2021-11-25 Thu 11:15>
+   Reasons: 1. later join with other tables that already in prep
+   2.  [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/DP_data_cleaning/preprocessing.py][clean_cm]]
+       [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/DP_data_cleaning/preprocessing.py][clean_sps_target]]
+       [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/dashboard_data_clean/sps_preprocessing.py][clean_sps]]
+       all have ~58 lines in common
+   3. Check that , stuff in price Gesamt Relevant UPE Listenpreis -> decimal or
+   4. [Prob Diana best] Ordernr. -> if int, then contains nan -> automatically float
+      Orderstatus
+   [2021-11-24 Wed]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/dashboard_data_clean/sps_preprocessing.py::sps = sps.drop([0, 2], axis=0).reset_index(drop=True)]]
+** TODO i do switch buffer for all cursors
+   [2021-11-24 Wed]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/ingestion/pre_lz702_augmented_sps.py::latest_update < pd.to_datetime(date.today()) - pd.DateOffset(]]
+** TODO ECR service: container service
+   [2021-11-25 Thu]
+** IN-PROGRESS Ask Steffen to change the meeting time of pricing to thursday after 13 uhr
+   [2021-11-26 Fri]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/ingestion/pre_lz702_augmented_sps.py::# in order to conform to the sf naming convetion]]
+** DONE Write Theresa about phone #
+   CLOSED: [2021-12-01 Wed 13:35]
+   [2021-11-26 Fri]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/ingestion/pre_lz702_augmented_sps.py::# in order to conform to the sf naming convetion]]
+** DONE discount sps_preprocessing diff
+   CLOSED: [2022-04-25 Mon 09:39]
+   [2021-11-26 Fri]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/dashboard_data_clean/sps_preprocessing.py::sps['total_discount_%'] = sps['total_discount'] / sps['MSRP'] * 100 ## sps['total_discount_%'] will be object automatically with empty strings]]
+** DONE greenline: different dealership, discounts wo asking the boss
+   CLOSED: [2021-12-01 Wed 13:36]
+   [2021-11-26 Fri]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/DP_data_cleaning/preprocessing.py::group by sps data to get historical analytics of greenline discount %, last month's total discount % and MSRP]]
+** DONE Check whether the mrsp way to calculate discount gives the same # to the discount in the raw_sps
+   CLOSED: [2022-04-25 Mon 09:38]
+   [2021-11-26 Fri]
+** DONE Ask Diana about clean_sps (discount redo)
+   CLOSED: [2022-04-25 Mon 09:38] SCHEDULED: <2021-11-30 Tue 08:30>
+   [2021-11-30 Tue]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/sps_fam/clean_cm.py::sps = sps[(sps['order_intake_date'].dt.month <= 6)\]]]
+** DONE Ask how to test CI/CD on code commit repo, eg, this file sem_opt_contribution_margin.py
+   CLOSED: [2021-12-01 Wed 13:37]
+   Answer: same like on the bitbucket -> Anand already set it up
+   SCHEDULED: <2021-11-29 Mon 11:15>
+   [2021-11-26 Fri]
+   [[file:~/.bashrc::# # Enable cross-account access: able to git clone tooling from consumer_DEV]]
+** IN-PROGRESS [NAWI] Ask step 2 and step 5:
+   SCHEDULED: <2021-12-02 Thu 08:30>
+   1. Cant open the NAWI mailbox in my outlook (VM). -> Mailbox mananger?
+      Done (two days after works)
+   2. Cant find MVZ (Mitarbeiterverzeichnis) on the BMW homepage.
+      Check screen share!
+   3. Cant send to this mail NAWI-Intern@list.bmw.com (Error: not a member of ...)
+      Done, was updated!
+   [2021-11-28 Sun]
+** DONE Why we can only read the bucket_name='dynamic-pricing-poc' from consumer not provider?
+   CLOSED: [2021-11-29 Mon 11:45]
+   provder: different purpose -> provider connects data src, consumer: further 
+   SCHEDULED: <2021-11-29 Mon 11:15>
+   [2021-11-28 Sun]
+   [[file:~/org/task_prompts.org::*raw_sdwh][raw_sdwh]]
+** DONE [Diana, Steffen]:
+   CLOSED: [2021-11-29 Mon 11:45] SCHEDULED: <2021-11-29 Mon 11:15>
+   1. 3 children of sdwh in semantic layer?
+   2. Which bucket to write them into? (sdwh or in general other data from Erik)
+      dyp external db: keep dyp tables into our own semantic layer
+                       read sf comments about simplication (no bucket name needed anymore)
+      
+   [2021-11-28 Sun]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_raw_sdwh.py::pattern='.parquet',]]
+** DONE [dyp]: deliverables:
+   CLOSED: [2021-11-29 Mon 11:45]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_raw_sdwh.py][sem_raw_sdwh]]
+   
+   [2021-11-28 Sun]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_raw_sdwh.py::pattern='.parquet',]]
+** DONE [Erik] ask what sdwh_dev model do?
+   CLOSED: [2021-11-29 Mon 11:45] SCHEDULED: <2021-11-29 Mon 11:15>
+   [2021-11-28 Sun]
+   [[file:~/org/task_prompts.org::*Workflow][Workflow]]
+** DONE [Erik]: ask about the extra cleaning stuff in the col name model_code
+   CLOSED: [2021-12-06 Mon 10:19] SCHEDULED: <2021-11-29 Mon 11:15>
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_sps.py][sem_cleaned_sps]]
+   [2021-11-29 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_sps.py::sps['model_code'] = sps.apply(lambda x: x['model_code'\][-4:], axis=1)]]
+** REVIEW sdwh: model, dev code level
+   dashboard: model code: engine type def (horsepower, 
+   dev: g20 -> 3 series bmw -> 5 different model codes
+   [2021-11-29 Mon]
+   [[file:~/org/index.org::*[Erik] ask what sdwh_dev model do?][[Erik] ask what sdwh_dev model do?]]
+** DONE Task from Diana: 
+   CLOSED: [2021-12-01 Wed 13:37]
+   1. push my codes in 3 diff branches (to streamline code check)
+   [2021-11-29 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_raw_sdwh.py::sf.write_semantic(df=sdwh, table_name='sem_raw_sdwh')]]
+** DONE [From Diana]: put comments around newly added codes.
+   CLOSED: [2021-12-01 Wed 13:37]
+   [2021-11-29 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/sps_fam/clean_sps.py::sps['bto_bts_demo'] == 'bts']]
+** TODO egrep model_code to see if it is consisten to clean up X1 xDrive25e / 71AB
+   [2021-11-29 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_sps.py::'model_code]]
+** TODO [Erik] [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/dashboard_data_clean/sdwh_preprocessing.py][clean_sdwh]]: take a look at the input and output of sdwh.
+   input: raw_sdwh, output: filtered sdwh but nothing is applied to sdwh.
+   Question: something actually applied to sdwh? Do we keep it raw_sdwh?
+   [2021-11-30 Tue]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/dashboard_data_clean/sdwh_preprocessing.py::sdwh_model_code (DataFrame): filtered sdwh_model_code data with useful columns:]]
+** DONE [Steffen] nl	Niederlassung (1 = NL; 0 = HO)	 what is HO?
+   CLOSED: [2021-12-01 Wed 11:05]
+   HO: Handler organization (In this context, it means private handler, which is mutually exclusive with NL).
+   But outside the context of our usecase, NL \in HO.
+   SCHEDULED: <2021-12-01 Wed>
+   [2021-11-30 Tue]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_dealer_buno.py::cleaned_dealer_buno = cleaned_dealer_buno.rename(columns={'niederlassung': 'BMW_owned_dealer', 'etname': 'dealer_region', 'buno': 'bmw_buno'})]]
+** DONE sem_cleaned_dealer_buno + cleaned_star in the branch
+   CLOSED: [2021-12-01 Wed 13:38]
+   preprocessing_star
+   [2021-11-30 Tue]
+   [[file:~/org/task_prompts.org::*Workflow][Workflow]]
+** DONE [Steffen] Explain what delta is
+   CLOSED: [2021-12-01 Wed 11:07] SCHEDULED: <2021-12-01 Wed>
+   [[https://tianyige-consumer.notebook.eu-west-1.sagemaker.aws/lab][Scroll down to the bottom to ask about this df]]
+   delta is the deviation from the target. Eg, we plan to hit the target of delivering 2000 cars in December.
+   But only 1000 are delivered -> delta = -1000
+   [2021-11-30 Tue]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_star.py::Description: This script filters out useful columns from the raw]]
+** TODO [dyp] Change the description of sem_cleaned_star.py and its corresponding description in its .tf entry.
+   This should be done only after consulting Steffen about delta in the star table.
+   SCHEDULED: <2021-12-01 Wed>
+   [2021-11-30 Tue]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_star.py::sf.write_semantic(df=star, table_name='sem_cleaned_star')]]
+** DONE [Diana]: report progress: all non-memory related tables done -> table check
+   CLOSED: [2021-12-01 Wed 13:38] SCHEDULED: <2021-12-01 Wed>
+   [2021-12-01 Wed]
+   [[file:~/org/task_prompts.org::*Workflow][Workflow]]
+** DONE [Davide, Souhrad]: ask about hiking
+   CLOSED: [2021-12-01 Wed 13:38]
+   Davide replied yes
+   SCHEDULED: <2021-12-01 Wed>
+   [2021-12-01 Wed]
+   [[file:~/org/task_prompts.org::*Workflow][Workflow]]
+** TODO [Erik] 1. KD test (check rossi data check) check two cols same; 
+   2. stats test -> parameter: p (t-test),
+      follow up: Erik would send it.
+   [2021-12-02 Thu]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/checker/table_checker.py::def check_schema(self):]]
+** TODO [Diana] Ask this granularity stuff about buno level dealer level
+   SCHEDULED: <2021-12-03 Fri>
+   [2021-12-02 Thu]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_dealer_buno.py::raw_dealer_buno = sf.read_data(key='input_data/dealer_buno_060921.parquet', bucket_name='dynamic-pricing-poc')]]
+** TODO [Diana]Aggregate ivsr to the etnr level?
+   [Steffen] Stay at the lowest granularity 
+   [2021-12-02 Thu]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_dealer_buno.py::raw_dealer_buno = sf.read_data(key='input_data/dealer_buno_060921.parquet', bucket_name='dynamic-pricing-poc')]]
+** TODO etnr (owner) -> many bunos or one buno
+   SCHEDULED: <2021-12-03 Fri>
+   dealder buno asset (most granular data)
+   Task: read those tables and ask Qs
+   [2021-12-02 Thu]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_dealer_buno.py::raw_dealer_buno = sf.read_data(key='input_data/dealer_buno_060921.parquet', bucket_name='dynamic-pricing-poc')]]
+** TODO [follow up Diana]read dealer_buno_asset? Check if buno from our dealer exits in
+   DEADLINE: <2021-12-02 Thu 16:00>
+   [2021-12-02 Thu]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_dealer_buno.py::raw_dealer_buno = sf.read_data(key='input_data/dealer_buno_060921.parquet', bucket_name='dynamic-pricing-poc')]]
+** DONE Check whether or not to break check_schema into smaller pieces in [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/checker/table_checker.py][table_checker.py]]
+   CLOSED: [2021-12-09 Thu 13:29]
+   [2021-12-05 Sun]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/checker/table_checker.py::raise ValueError(f"The unmachted colnames along with its corresponding datatypes are {unmatched_dytpes_set}.")]]
+** DONE Ask about whether to keep all other columns of lease since there is no column_selection of lease in [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/config/dashboard_data_cleaning.yml][dashboard_data_cleaning.yml]]
+   CLOSED: [2021-12-09 Thu 13:29] SCHEDULED: <2021-12-07 Tue 14:00>
+   if is_keep == True:
+      ask about whether to change the other german colnames to english since now we have both eng + german
+   else:
+      original .csv keeps all german cols
+
+   ValueError: The unmatched column names are
+   {'finanzierungsvolumen_ursp', 'fz_mobilieart', 'al_vt_ll',
+   'nachlass', 'filiale', 'eroeffnungsdatum', 'upe_ag', 'al_ezl',
+   'al_lsz_netto', 'kf_zielrate_lc', 'vt_typ', 'produkt_art',
+   'produkt_typ', 'nachlaspercent', 'vertrag_nr', 'geschaeftsfeld',
+   'kf_erstzulassung_datum', 'alpha_haendler', 'hdl_typ',
+   'fz_mod_bez', 'kf_betr_erste_ratenfaell'}.  [2021-12-05 Sun]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamic-pricing-poc/code/cor_models/config/dashboard_data_cleaning.yml::column_renaming:
+   {'VERTRAGSENDE': 'lease_end_date', 'VT_LZM_URSP':
+   'contract_length',]]
+** DONE star table check:
+   CLOSED: [2021-12-09 Thu 13:30] SCHEDULED: <2021-12-07 Tue 14:00>
+   Happens for both cleaned_sps and cleaned_star table. The only unmatched dtype is yearmon
+   
+   star['yearmon'] = star['year'].astype(str) + ["%02d" % x for x in star['month']]
+   
+   control: int64 exp: str
+
+   $star_control.yearmon.dtype
+   dtype('int64')
+
+   $star_experiment.yearmon.dtype 
+   StringDtype
+
+   Sol: change int64 from Erik's csv to str
+   [2021-12-05 Sun]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_star.py::star = star[['development_code', 'model_code', 'yearmon', 'date', 'dealer_region', 'delta_target']\]]]
+** TODO etnr: have 10 dealers (all have the same etnr number (owner)). buno: business units. VIN level: buno more granular
+   [2021-12-06 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_sps.py::Dataflow: clean_sps: (augmented_sps, sdwh_model_code) -> cleaned_sps]]
+** DONE [Erik] np.int64 and str error
+   CLOSED: [2021-12-09 Thu 13:30] SCHEDULED: <2021-12-09 Thu 13:00>
+   ValueError: For column lease_yearmon, the unique values of control and experiment tables are {202112, 202108, 202109, 202110, 202111} and {'202112', '202109', '202108', '202111', '202110'}, respectively.
+   [2021-12-08 Wed]
+   [[file:~/org/task_prompts.org::*Sources][Sources]]
+** DONE sf convetion otherwise write_prep wont work
+   CLOSED: [2021-12-09 Thu 13:31]
+   ERROR ; error; Tianyi Ge; dopc; trigger_level: 1; Column greenline_discount_% does not conform the column naming convention. Check column names.
+ERROR ; error; Tianyi Ge; dopc; trigger_level: 1; Column MSRP does not conform the column naming convention. Check column names.
+ERROR ; error; Tianyi Ge; dopc; trigger_level: 1; Column total_discount_% does not conform the column naming convention. Check column names.
+ERROR ; error; Tianyi Ge; dopc; trigger_level: 1; Column Neukunde does not conform the column naming convention. Check column names.
+ERROR ; error; Tianyi Ge; dopc; trigger_level: 1; Column Gesamt Relevant UPE Listenpreis does not conform the column naming convention. Check column names.
+
+   Sol: leave the naming changes unchanged until Erik is done with the checking.
+   [2021-12-08 Wed]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/ingestion/pre_lz702_augmented_sps.py::sf.write_prep(sps, target='LANDING_ZONE', table_name="pre_lz702_augmented_sps", data_status=latest_update, out_of_date=is_out_of_date)]]
+** TODO [Diana] Size check of [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_star.py][sem_cleaned_star]] table cant be completed because it uses dealer_buno from C1 which 
+   SCHEDULED: <2021-12-13 Mon 11:15>
+   has a lot more rows than the control one from Erik. cleaned_star is not filtered on date.
+   Result: star_experiment has a lot more columns than control.
+   [2021-12-10 Fri]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_star.py::star = star.merge(dealer_buno, on='bmw_buno', how='left')]]
+** TODO [Anand, Steffen] 1. Where to write our table when the script is run in diff environment.
+   SCHEDULED: <2021-12-13 Mon 11:15>
+   Intermediate goal: combine all read and write tables, separately.
+   End goal: (self)join read/write to form input for flowchat
+
+   2. Append row to a S3 table (1. keep reading, locally writing and s3 overwrite.
+      2. dataset=True, mode="append" -> create .csv files -> later combine them all.
+      Bandwidth a problem (slow)?
+   [2021-12-13 Mon]
+   [[file:~/Documents/work/data_engineering/scripts/flow_chart/data_io.py::jdbc_url=jdbc_url,]]
+** TODO lightgbm, gradient bossted machines
+   SCHEDULED: <2021-12-14 Tue>
+   [2021-12-13 Mon]
+** TODO [Diana] sps debug: The sps file we are reading is '702_ZDF_Grunddaten/2021_05_18_C1_FE_Grunddaten_Aktuell.xlsx'.
+   This means max date is 18.05.2021. It doesnt contain the rows on date 30.06.2021
+   # Original read
+   a = sf.read_data(source='LANDING_ZONE', key='702_ZDF_Grunddaten/2021_05_18_C1_FE_Grunddaten_Aktuell.xlsx', skiprows=range(0, 3), usecols=cols_to_read)
+   max(pd.to_datetime(a['Auftragseingang Datum'], format='%d.%m.%Y'))
+   Output: Timestamp('2021-05-18 00:00:00')
+   
+   # Erik ymal file
+   # sps stands for sales performance system.
+   # use sps to get get processing type share and contract type share, greenline discount, discount, MSRP, contribution margin
+   sps_filename: '2021_05_18_C1_FE_Grunddaten_Aktuell_SPS.xlsx' # raw data path (excel folder)
+   
+   # conclusion
+   original xlsx doesnt contain the row for 30.06.2021
+   [2021-12-14 Tue]
+   [[file:~/Documents/work/ICE_C1_Repo/ice-provider/code/preparing/pre_lz702_augmented_sps.py::sps = sf.read_data(source='LANDING_ZONE', key='702_ZDF_Grunddaten/2021_05_18_C1_FE_Grunddaten_Aktuell.xlsx', skiprows=range(0, 3), usecols=cols_to_read)]]
+** IN-PROGRESS [Steffen, flowchart order]: timestamp file name sf. output/input sort by timestamp
+   [2021-12-14 Tue]
+** TODO [Erik]
+   SCHEDULED: <2021-12-17 Fri 10:15>
+   [[https://www.bmwgroup.jobs/de/en/jobfinder/job-description.48800.html][Software Engineer Advanced Analytics and Artificial Intelligence]]
+   [[https://www.bmwgroup.jobs/de/en/jobfinder/job-description.41369.html][Software Engineer Simulation]]
+   [[https://www.bmwgroup.jobs/de/en/jobfinder/job-description.48293.html][Software Engineer]]
+   [[https://www.bmwgroup.jobs/de/en/jobfinder/job-description.45271.html][(Senior) Data Analyst & Architect]]
+   [[https://www.bmwgroup.jobs/de/en/jobfinder/job-description.49562.html][Data Scientist]]
+   
+   Additional Link to read:
+   [[https://contenthub-de.bmwgroup.net/web/digi-conn-serv/specific-purpose-analytics-fg-22][FG-22]]
+   [2021-12-16 Thu]
+** TODO [Erik] Weird stuff with ?? in [[/home/q534697/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_mt_after_impute_missing_values_for_cash.py][sem_impute_..._cash]]
+   [2021-12-18 Sat]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_mt_after_impute_missing_values_for_cash.py::# ?? ask why we do this?]]
+** DONE Error log to execute the while loop
+   CLOSED: [2022-01-04 Tue 21:52]
+   Problem: not enough memory because smerge wrong
+   solution: fix uniques values after partition
+   
+An error was encountered:
+An error occurred while calling z:org.apache.spark.api.python.PythonRDD.runJob.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 1 in stage 67.0 failed 4 times, most recent failure: Lost task 1.5 in stage 67.0 (TID 1380, ip-10-6-94-180.eu-west-1.compute.internal, executor 4): ExecutorLostFailure (executor 4 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 135792 ms
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:2136)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:2124)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:2123)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2123)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:994)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:994)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2384)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2333)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2322)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:805)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2097)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2118)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2137)
+	at org.apache.spark.api.python.PythonRDD$.runJob(PythonRDD.scala:153)
+	at org.apache.spark.api.python.PythonRDD.runJob(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/rdd.py", line 1394, in isEmpty
+    return self.getNumPartitions() == 0 or len(self.take(1)) == 0
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/rdd.py", line 1360, in take
+    res = self.context.runJob(self, takeUpToNumLeft, p)
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/context.py", line 1077, in runJob
+    sock_info = self._jvm.PythonRDD.runJob(self._jsc.sc(), mappedRDD._jrdd, partitions)
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 63, in deco
+    return f(*a, **kw)
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling z:org.apache.spark.api.python.PythonRDD.runJob.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 1 in stage 67.0 failed 4 times, most recent failure: Lost task 1.5 in stage 67.0 (TID 1380, ip-10-6-94-180.eu-west-1.compute.internal, executor 4): ExecutorLostFailure (executor 4 exited caused by one of the running tasks) Reason: Executor heartbeat timed out after 135792 ms
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.org$apache$spark$scheduler$DAGScheduler$$failJobAndIndependentStages(DAGScheduler.scala:2136)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:2124)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$abortStage$1.apply(DAGScheduler.scala:2123)
+	at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2123)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:994)
+	at org.apache.spark.scheduler.DAGScheduler$$anonfun$handleTaskSetFailed$1.apply(DAGScheduler.scala:994)
+	at scala.Option.foreach(Option.scala:257)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:994)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:2384)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2333)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:2322)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:805)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2097)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2118)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2137)
+	at org.apache.spark.api.python.PythonRDD$.runJob(PythonRDD.scala:153)
+	at org.apache.spark.api.python.PythonRDD.runJob(PythonRDD.scala)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:238)
+	at java.lang.Thread.run(Thread.java:748)
+   [2022-01-03 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_mt_after_impute_missing_values_for_cash.py][file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_mt_after_impute_missing_values_for_cash.py]]
+** DONE write semantic not enough memory
+   CLOSED: [2022-01-04 Tue 21:51]
+An error was encountered:
+Invalid status code '400' from http://localhost:8998/sessions/34/statements/1 with error payload: {"msg":"requirement failed: Session isn't active."}
+
+Solution: disbale empty_checks in write -> speed up writes
+
+   [2022-01-03 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_mt_after_impute_missing_values_for_cash.py::sf.write_semantic(df=target_data, table_name='sem_mt_after_impute_missing_values_for_cash')]]
+** TODO [Pricing PoC] Deliverables:
+   1. sem_mt_after_impute_missing_values_for_cash done (~15 min, with empty_check disabled)
+   2. sem_mt_after_impute_missing_values_for_cash_include_btsdemo done (~40 min with empty_check disabled)
+   3. 3 ivsr tables are done
+
+   all tables required in preprocessing are generated in prep + semantic
+
+   Question: how to check left_unique and right_unique in pyspark smerge?
+   My naive approach: drop duplicates -> compare cnt before and after.
+   Ask: intuitive way or some other programming metric to use?
+   
+   SCHEDULED: <2022-01-10 Mon 11:15>
+   [2022-01-04 Tue]
+** TODO Hey everybody, the scripts have been pushed to the codecommit along with .tf and are now in PR.
+
+I would like to give a quick update about the (40 min)
+running time I mentioned in the call after several reruns.
+
+1. sem_mt_after_impute_missing_values_for_cash done (~15 min = 11
+min script w/o sf.write + 5 min sf.write, with empty_check disabled)
+
+2. sem_mt_after_impute_missing_values_for_cash_include_btsdemo (~36 min = 24 min
+min script w/o sf.write + 12 min sf.write, with empty_check disabled)
+
+So, sf.write takes around 33% of running time.
+
+The bottleneck of speed is this collect function in the original pandas context:
+
+    samples.loc[samples.contract_type == 'cash'].cash_down.isna().sum() > 0
+
+which I optimized to the following:
+
+    while len(target_data.select('contract_type','cash_down').filter(target_data.contract_type == 'cash').drop('contract_type').filter(F.isnull('cash_down')).take(1)) > 0:
+
+But still both take(1) and df.sum run slow on the big df. Any suggestion on improvement is very welcome!
+
+   [2022-01-10 Mon]
+** TODO Send an email to Narmin about 7 missing columns in Rossi and model_typ
+   [2022-01-17 Mon]
+   [[file:~/Documents/work/dynamic_pricing_general/dynamicPricing/code/preprocessing/sem_cleaned_sdwh.py::'class' 'cylinder' 'exhaust' 'hybrid_code' 'model_marketing' 'motor_series' 'series']]
+** TODO filename -> jobname, responsible, 
+   [2022-01-17 Mon]
+   [[file:~/Documents/work/data_engineering/scripts/flow_chart/flow_io.py::# # plt.figure()]]
+** TODO [Diana, Anand] 1. How to test a single glue job programatically, such as imputation.
+   2. How to test sf safely, eg, flowchart.
+   [2022-01-18 Tue]
+** TODO [Von Steffen, Erik] Figure out glue end point (with emacs) to run that similar cloud 9 stuff
+   [2022-01-19 Wed]
+   [[file:~/org/notes.org::*Hotkey][Hotkey]]
+** IN-PROGRESS [Steffen] 1. replace ' ' with _ in colnames in daily emails because of join?
+   2. Add glue environment to the logger before a full run of all glue jobs (done: successful)
+
+   1. (Done -> toy sample + testing done) csv as attachment
+   2. (Done) timestamp added (extra col). after error col (error, stale data, data status) we need join to add timestamp to the table that contains completedOn (bc: timestamp from
+   our common functions and completedOn by amazon glue)
+   
+   error table (cant be done): must join <- completedOn from glue job, logging ts from sf
+   stale data, data status (done): correct Diana's request
+   
+   3. Check the case for non-existen email address
+      
+   4. Automate script on tf
+
+   5. (Done) Add succeeded, timeout... jobs to the unmatched responsiblities too: original codes were correct 
+
+          prepared_list_1 = [
+        new_val for new_val in v_final_list
+        if datetime.strptime(new_val.split("|")[3][0:10], '%Y-%m-%d').date() >= v_date_range
+    ]
+
+        v_prepared_list_1 = [j.split("|") for j in prepared_list_1]
+
+        for new_val in v_prepared_list_1:
+           v_global_list_2.append(new_val)
+
+        v_global_list_2 holds all jobs (timeout, failed, succeeded) that have unmatched responsiblities.
+   SCHEDULED: <2022-01-20 Thu 13:00>
+   [2022-01-19 Wed]
+   [[file:~/Documents/work/data_engineering/scripts/daily_email/glue_flow_chart_testing.py][file:~/Documents/work/data_engineering/scripts/daily_email/glue_flow_chart_testing.py]]
+** TODO [from Erik] check screen and ssh together to prevent break
+   [2022-01-20 Thu]
+** TODO 1. Connect local dev env to aws debug
+   2. check tf
+   [2022-01-22 Sat]
+** DONE [Erik] EC2 shuts down after sometime although I have been working inside it the entire time.
+   CLOSED: [2022-01-24 Mon 11:49]
+   Broadcast message from root@ip-10-19-0-148.eu-west-1.compute.internal (Sun 2022-01-23 20:28:01 UTC):
+
+   The system is going down for power-off at Sun 2022-01-23 20:43:01 UTC!
+
+   Solution: 1. Increase herbination time 2. Open the cloud 9 interface all the time
+   [2022-01-23 Sun]
+** TODO [Erik] Document the cloud 9 setup on Confluence
+   [2022-01-24 Mon]
+   [[file:/ssh:cloud9-c1-dp-dev-bmw:/home/ec2-user/startup.sh::ML_BASE_Dir=/home/ec2-user/Documents/work/ice-dynamic-pricing-ml]]
+** TODO Difference between lambda and step function.
+   [2022-02-04 Fri]
+   [[file:~/Documents/work/dynamic_pricing_general/mlops/mlops-ad2-c1f-code/notebooks/helpers/steps.py::}]]
+** TODO [Erik] 1. Ask permission to access s3://cor-models-input/
+   need to figure out the output format of feature+ml in docker
+   2.     ProcessingInput(
+        destination='/opt/ml/processing/input/data',
+        input_name='input-raw-data',
+        source='s3://dynamic-pricing-poc/input_data/',
+    ),
+
+    does it load all tables from the bucket?
+    sol: 1. specify which table
+    2. dyp's own bucket (modify whl)
+   [2022-02-06 Sun]
+** DONE [Pushpraj] Terraform: 1. resource "aws_glue_job" vs module
+   CLOSED: [2022-02-10 Thu 14:49]
+   2. resource "aws_glue_job" "my_job_resource" {
+    name     = "hello_world_test_terraform"
+
+   Sol:
+   1. module is portable and configurable from diff resources while a glue job is only created once
+   2. arg name appears in aws console while resource name is referred in .tf 
+   [2022-02-08 Tue]
+   [[file:~/Documents/work/data_engineering/scripts/flow_chart/tf_test/main_1.tf::}]]
+** DONE 
+   CLOSED: [2022-02-09 Wed 14:23]
+   smerge -> sf.log
+
+   read io -> check_last_written_date -> log warning
+   srt -> str string to long -> log warning (logger.py)
+   distribute_numeric_cols_by_weights -> smart random round -> log warning
+
+   write io -> _write_parquet_table -> _common_write_checks -> check_empty_rows_and_cols -> log warning
+
+   Pseudo Code:
+   -------------------------------------------------
+   function name + line num 
+
+   anfang 1 mal tief: function name smerge?
+
+   if not noch 1 mal tief (2 mal in total):
+       if function name has write: 
+           noch 2 mal tief
+           -> (4 male tief zu write io)
+           -> line numbe rzu cloud watch
+       else:
+          line mum zu cloudwatch
+   -----------------------------------          
+   [2022-02-09 Wed]
+   [[file:~/Documents/ref_code_repo/ice-standard-functions/standard_functions_python/data_io.py::def write_report(df: pd.DataFrame,]]
+** TODO [Pushpraj]
+   1. Terraform Questions:
+   
+q534697@cmucl0957831:infrastructure(task/flow_chart)$ terraform apply
+Acquiring state lock. This may take a few moments...
+╷
+│ Error: Error acquiring the state lock
+│ 
+│ Error message: 2 errors occurred:
+│       * ResourceNotFoundException: Requested resource not found
+│       * ResourceNotFoundException: Requested resource not found
+│ 
+│ 
+│ 
+│ Terraform acquires a state lock to protect the state from being written
+│ by multiple users at the same time. Please resolve the issue above and try
+│ again. For most commands, you can disable locking with the "-lock=false"
+│ flag, but this is not recommended.
+
+Sol: [[https://stackoverflow.com/a/66247343][delete lock file]] + re init
+result: terraform apply -> still same problem
+
+2. Why do we need the int branch instead of just one? we do the manual, reviewer check (before pr merge) and code build (within a 
+day of dev merge)
+
+3. provider "aws" {
+  region = "eu-west-1"
+  assume_role {
+    role_arn = "arn:aws:iam::807535646066:role/Terraform"
+  }
+}
+why cant my account assume this role? How to assume?
+
+4.
+   def cross_auth(role_to_assume: str):
+    '''Cross Authentication from tooling account to assume roles in other accounts
+
+    Args:
+        role_to_assume (str): cross account role arn to assume
+
+    Returns:
+        Return code[str]: (personalised) Assume role and call get_glue_run_status to get the list of glue job failure report 
+    '''
+    session = boto3.session.Session()
+    sts_client = session.client('sts')
+    cross_account_role = role_to_assume
+
+    assumed_role_object = sts_client.assume_role(
+        RoleArn=cross_account_role, RoleSessionName="GlueGetStatus")
+
+    # Fetch credentials of assume role
+    credentials = assumed_role_object['Credentials']
+
+    glue_client = session.client(
+        'glue',
+        aws_access_key_id=credentials['AccessKeyId'],
+        aws_secret_access_key=credentials['SecretAccessKey'],
+        aws_session_token=credentials['SessionToken'],
+    )
+
+    a. I remembered there are auto-generated codes like this on AWS in diff languages 
+    Python, Ruby.... Where is it?
+    b. (Background: this job is run on glue with a proper IAM role, tooling-glue-job-testing). Question: how this line
+    sts_client.assume_role(
+        RoleArn=cross_account_role, RoleSessionName="GlueGetStatus")
+
+    detect taht sts_client actually has the IAM role tooling-glue-job-testing?
+
+5. Why artifacts not included in the buildspec_apply.yml
+
+buildspec_plan.yml   
+
+artifacts:
+  files:
+    - "${ENV}.plan"
+    - "${ENV}_review.txt"
+    - "*.zip"
+    - ".terraform/modules/bd_genesis_ingest/dependencies-*.zip"
+    - ".terraform/modules/his_cube_ingest/dependencies-*.zip"
+    - ".terraform/modules/source_ingest/dependencies-*.zip"
+  discard-paths: no
+  base-directory: infrastructure/account_setup
+
+6. Where is builds...yml called? Cant find it in .tf (eg, in codebuild_project)
+     [2022-02-09 Wed]
+** DONE glue 3 vs glue 2: spark3 + autoscaling feature (<= max fixed) costs: #workers over the time check glue studio 
+   CLOSED: [2022-04-23 Sat 17:54]
+   [2022-02-17 Thu]
+** DONE sem_rl_prognose, sem_v10_prognose try with part of the data
+   CLOSED: [2022-04-23 Sat 17:54]
+   [2022-02-17 Thu]
+   [[file:~/Documents/work/ICE_C1_Repo/ice-consumer/code/preparing/scripts/pre_vehicle_history_overview.py::# Read data]]
+** DONE 
+   CLOSED: [2022-04-23 Sat 17:54]
+   Version   Date   
+   "0.13.5" April 29, 2021, 20:43:43 (UTC+02:00)
+   "1.0.3" February 10, 2022, 17:42:50 (UTC+01:00)
+   "1.1.4" February 10, 2022, 19:00:41 (UTC+01:00)
+   [2022-02-21 Mon]
+   [[file:~/Documents/work/ICE_C1_Repo/ice-provider/infrastructure/cicd/backend-config.hcl::key = "provider-common-state"]]
+** DONE [Push] 1. Why it's bad to pick the default kms in tooling
+   CLOSED: [2022-04-23 Sat 17:54] SCHEDULED: <2022-03-07 Mon 14:00>
+   2. Way to trigger a glue job upon terraform (trigger setup)
+   3. How to extract tf codes from an existing iam role which was manually created
+   [2022-03-04 Fri]
+   [[file:~/Documents/work/data_engineering/scripts/extract_DPUs/scripts/extract_DPUs_tianyi_test.py][file:~/Documents/work/data_engineering/scripts/extract_DPUs/scripts/extract_DPUs_tianyi_test.py]]
+** DONE [Pushpraj, Mareike] Update package version in site-package for a glue job. Eg, boto3...
+   CLOSED: [2022-04-23 Sat 17:54]
+   botot site-package
+   1. 
+      2022-03-09T18:14:20.191+01:00	boto3 version is the following 1.9.203
+
+      2022-03-09T18:19:33.732+01:00	boto3 version is the following 1.21.15
+
+   2.
+      print(wr.lakeformation.start_transaction)
+
+      <function start_transaction at 0x7f69b208f268>
+   3. role-ew1-ice-c1-con-dev-glue added lakeformationadmin iam role
+   4. Delete system botocore and import the ones from .whl
+   [2022-03-09 Wed]
+   [[file:~/Documents/work/data_engineering/scripts/check_awswrangler/pre_voc_tianyi_test_aws.json::"--additional-python-modules": "awswrangler==2.14.0,watchtower==1.0.0,aws-requests-auth==0.4.3,tableauserverclient==0.15.0,polling2==0.5.0,botocore==1.24.15",]]
+** DONE 1. Lack of colorful output in vterm -> install gnu utils on mac 2. Done -> Emacs startup: full screen and font size
+   CLOSED: [2022-04-08 Fri 14:41]
+   [2022-04-02 Sat]
+   [[file:~/org/index.org::*\[Pushpraj, Mareike\] Update package version in site-package for a glue job. Eg, boto3...][[Pushpraj, Mareike] Update package version in site-package for a glue job. Eg, boto3...]]
+** DONE [Work-Reply] 1. Authorization to book a table -> Ask Thorsten 3. Varun org photo 4. Ask people for coffee
+   CLOSED: [2022-04-08 Fri 13:54] SCHEDULED: <2022-04-04 Mon>
+   [2022-04-02 Sat]
+   [[file:~/org/index.org::*1. Lack of color theme in vterm 2. Emacs startup: full screen and font size][1. Lack of color theme in vterm 2. Emacs startup: full screen and font size]]
+** TODO Receipts sent to reply: 1. MVG 2. Kult -> talk to Thorsten
+   SCHEDULED: <2022-04-29 Fri>
+   [2022-04-03 Sun]
+** DONE [Reply onsite] 1. Printer setup 2. Badge pickup 3. Coffee
+   CLOSED: [2022-04-08 Fri 14:41] SCHEDULED: <2022-04-06 Wed>
+   [2022-04-05 Tue]
+** TODO EU blue card 
+   [2022-04-11 Mon]
+   [[file:~/org/index.org::*\[Work-Reply\] 1. Authorization to book a table -> Ask Thorsten 3. Varun org photo 4. Ask people for coffee][[Work-Reply] 1. Authorization to book a table -> Ask Thorsten 3. Varun org photo 4. Ask people for coffee]]
+** TODO Report monthly hours: [[https://geco.reply.com/#t][timebutler]]
+   SCHEDULED: <2022-04-29 Fri>
+   [2022-04-08 Fri]
+   [[file:~/org/index.org::*Receipts sent to reply: 1. MVG 2. Kult -> talk to Thorsten][Receipts sent to reply: 1. MVG 2. Kult -> talk to Thorsten]]
+** DONE Set up a global git ignore list like the one in CMU database
+   CLOSED: [2022-04-23 Sat 17:53] SCHEDULED: <2022-04-15 Fri>
+   [2022-04-14 Thu]
+   [[file:~/Documents/learning/database/intro-to-db/labs/cmu-15445-intro-to-db/.gitignore::==============================================================================#]]
+** TODO Ask access to the following web 
+   https://dataiku-prod.levi-site.com:10000/projects/LSE_DIM_PRODS/flow
+   https://levistrauss.atlassian.net/wiki/spaces/LDAA/pages/1897071132/LEL+S1S1+-+CoreML+platform+using+JupyterHub+on+K8S
+
+   #7: training, #8, #9
+   https://levistrauss.atlassian.net/wiki/spaces/LDAA/pages/1158383459/All+LSE+Accesses+to+Request
+
+   [2022-04-19 Tue]
+   [[file:~/org/notes.org::*Link][Link]]
+** TODO Reply: 1. Email renten versicherung 2. Long CV 3. EU Blue card
+   [2022-04-19 Tue]
+   [[file:~/org/notes.org::*Link][Link]]
+** TODO #14 + multi-container
+   dcinv. check naming convetion confluence, DE GAO Data Lake ETL, lse_airflow
+   [2022-04-20 Wed]
+   [[file:~/org/notes.org::*Link][Link]]
+** TODO Question: [[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375424351/DE+GAO+Data+Modeling+in+Datalake+EU][1. ASK Grain of the Table]]
+   SCHEDULED: <2022-04-21 Thu>
+   [2022-04-21 Thu]
+   [[file:~/org/notes.org::*People to ask for help][People to ask for help]]
+** DONE [Jaime] 1. Ask about holiday planning [[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375426111/DE+GAO+holiday][Holiday Planning DE GAO]], need to talk to reply?
+   CLOSED: [2022-04-25 Mon 09:39] SCHEDULED: <2022-04-21 Thu>
+   [2022-04-21 Thu]
+   [[file:~/org/notes.org::*Link][Link]]
+** DONE Update https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375426144/DE+GAO+Update+holidays+in+MS+TEAMS+Shift
+   CLOSED: [2022-04-23 Sat 17:52]
+   no response
+   [2022-04-22 Fri]
+   [[file:~/Documents/work/Levis/tasks/multi-page/apps/model.py::st.subheader("Model Fit Metrics")]]
+** TODO Do the two cybersecurity training in KnowBe4 (Okta)
+   SCHEDULED: <2022-04-24 Sun>
+   [2022-04-23 Sat]
+   [[file:~/org/index.org::*Update https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375426144/DE+GAO+Update+holidays+in+MS+TEAMS+Shift][Update https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375426144/DE+GAO+Update+holidays+in+MS+TEAMS+Shift]]
+** DONE Email Qiang 
+   CLOSED: [2022-04-25 Mon 09:47] SCHEDULED: <2022-04-25 Mon>
+   [Deselect Request responses]https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375426111/Holiday
+   [isnt necessary]https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375426144/DE+GAO+Update+holidays+in+MS+TEAMS+Shift
+   
+   [2022-04-23 Sat]
+   [[file:~/org/index.org::*Do the two cybersecurity training in KnowBe4 (Okta)][Do the two cybersecurity training in KnowBe4 (Okta)]]
+** TODO dataiku aws dev -> prod. notebook -> convert into reciepies. load the data -> s3. Last ask Howard for helping with the APP.
+   [2022-04-25 Mon]
+   [[file:~/org/notes.org::*Link][Link]]
+** TODO Write a CI/CD in jenkins that allows an image to be pushed to ECR
+   SCHEDULED: <2022-04-29 Fri>
+   [2022-04-28 Thu]
+** TODO 1. Ask Qiang Access to videos on  https://levistrauss.atlassian.net/wiki/spaces/LDAA/pages/1205600427/S1S4+-+Python+Standards+and+Best+Practices
+   https://levistrauss.atlassian.net/wiki/spaces/LDAA/pages/1205600408/S1S5+-+SQL+Standards+and+Best+Practices
+   2. Ask opinion on the Jenkins-cli
+   [2022-05-01 Sun]
+** TODO Understand which particular policy  gives Jenkins the ssh access to EC2.
+  [2022-05-02 Mon]
+** TODO 1. Ask Jaime about how to split a task (assign story points)
+SCHEDULED: <2022-05-03 Tue>
+  [2022-05-02 Mon]
+  [[file:~/org/notes.org::http://10.240.157.59:5000/][Folders on the Reply-Mac-Temp]]
+** TODO /Users/t.ge/Documents/work/Levis/tasks/LSE_AIRFLOW_DATALAKE/airflow/dags/lod_hana_lse_sls_inv_mth_dly.py
+    on_failure_callback=partial(send_error_email, DEFAULT_ARGS.get("email")),
+    dev_js
+  [2022-05-03 Tue]
+  [[file:~/Documents/work/Levis/tasks/LSE_AIRFLOW_DATALAKE/airflow/dags/lod_hana_lse_sls_inv_mth_dly.py::teams_notify_fail,]]
+** TODO [Jaime] 1. Dev link in team not working. 
+  [2022-05-04 Wed]
+** TODO [PR review] https://github.levi-site.com/GAI/AIRFLOW_FEATURE_STORE/pull/40/files#submit-review
+https://github.levi-site.com/GAI/DATA_DICTIONARY/pull/44/files
+https://github.levi-site.com/GAI/AIRFLOW_EMR_CONTROL/pull/14/files
+SCHEDULED: <2022-05-09 Mon>
+  [2022-05-05 Thu]
+  [[file:~/Documents/work/Levis/tasks/LSE_AIRFLOW_DATALAKE/airflow/dags/dim_mdm_lse_weather_store_dly.py::TABLE_NAME = "MDM_LSE_WEATHER_STORE_DLY"]]
+** TODO [Jaime] https://dataiku-dev.levi.com/projects/PPELASTICITYCURVES/recipes/preprocessing/
+  [2022-05-06 Fri]
+  [[file:~/org/notes.org::*Levis task][Levis task]]
+** TODO [GIT PR] https://github.levi-site.com/LSE/LSE_AIRFLOW_DATALAKE/pull/595#pullrequestreview-85897
+https://github.levi-site.com/GAI/AIRFLOW_FEATURE_STORE/pull/36
+SCHEDULED: <2022-05-16 Mon>
+  [2022-05-12 Thu]
+  [[file:~/Documents/work/Levis/tasks/AIRFLOW_FEATURE_STORE/sql/ddl/FEAT_PP_L1/CONSO_PMD_GLB_PRICE_PROMO_PC13_DLY.sql::) STORED AS PARQUET COMMENT "season, pc9, promo" LOCATION '${LSE_DL_GOLD_S3_BUCKET}/L1/CONSO/PRD/CONSO_PMD_GLB_PRICE_PROMO_PC13_DLY/';]]
+** TODO [data_check] 1. multiline processing 2. No space in LIKE ' %'
+  [2022-05-14 Sat]
+** TODO [GS] Only works with the Celery, CeleryKubernetes or Kubernetes executors, sorry
+2. add awswrangler in fs requirements
+3.  switching to celery cluster. After 3 runs,
+Core - 2: EC2 is out of capacity for instance type m5.2xlarge in availability zone us-west-2c. Learn more at https://docs.aws.amazon.com/console/elasticmapreduce/ERROR_noinstancecapacity.
+4. how does the datacheck previously could import awswrangler (ran on emr or airflow server)
+5. 
+SCHEDULED: <2022-06-13 Mon>
+  [2022-06-11 Sat]
+  [[file:/ssh:airflow-feature-store-dev:/home/ec2-user/miniconda3/envs/airflow2/lib/python3.8/site-packages/emr_operators/control/run_script.py::_logger.info(response)]]

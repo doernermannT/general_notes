@@ -1,0 +1,598 @@
+* .gitignorex
+* Severless
+[[https://dev.to/aws-builders/very-nordic-problem-in-search-of-great-skiing-track-34db][Very Nordic Problem: In search of great skiing track]]
+[[https://www.ajindal.me/][Jindal's homepage: serverless + microservices FaaS]]
+
+* Google
+** Link
+[[https://devlibrary.withgoogle.com/][google developer articles]]
+
+* MAC
+** Hotkeys
+Command + Tab = switch between applications
+Command + ~ = switch between windows of an application
+CTRL + Tab = move forward through tabs (in same window)
+CTRL + Shift + Tab = move backward through tabs (in same window)
+
+* Regex
+  [[https://stackoverflow.com/a/14214044/3743027][.+? vs .+]]
+  
+  [[https://stackoverflow.com/a/26529333/3743027][Match backwards using negate a character [^]​]]
+
+  [[https://stackoverflow.com/questions/3735841/split-with-single-colon-but-not-double-colon-using-regex][Match single | but not || using negative look around]]
+
+  # Replace space with _ in a file name
+  $ rename 's/ /_/g' Machine\ Learning\ Reply\ U22077298\ GrUV\ Anmeldung.pdf
+  
+* Linux Hotkeys
+  $ recordmydesktop --on-the-fly-encoding -o Diana.ogv
+   
+  # Open the file in a buffer from the current terminal
+  $ myedit notes.org
+
+  # Copy the output of cmds to clipboard
+  $ ..... | _xclip
+
+  # Find files that contain both two strings (patterns)
+  $ egrep -l "read_sem" $(egrep -l "write_sem" /path/*)
+  $ egrep "read_sem" -r * | egrep "write_report"
+
+  # Search all hidden (.*) and non-hidden (*) files in the dir
+  # Namely, non-recursive. -s: suppress error msg -> ignore folder
+  # in the current dir
+  $ egrep -s "percent" /path/to/dir/{*,.*}
+
+  # Find all python files that dont contain keywords "Dynamic Pricing"
+  # -L: --files-without-match
+  $ fd .py | xargs -I {} egrep -L "Dynamic Pricing" {}
+
+  $ fd .py | xargs egrep -L "C1-F-1" | xargs sed -i 's/Responsible\:.*/Responsible:  Tianyi Ge (C1-F-1)/'
+
+  # Find files whose filenames dont contain a certain string
+  $ fd -E '*lambda*' .
+
+  # Remove all folders except the one called checker
+  # -v: invert meatch
+  $ ls | egrep -v checker | xargs rm -r 
+
+  # Find all python files recursively in the current dir that has "Tianyi"
+  $ fd \.py$ | xargs -I {} egrep "Tianyi" -l -r {}  
+
+  $ fd \.py$ /home/q534697/Documents/work/ICE_C1_Repo/ice-provider | xargs -I {} egrep "Tianyi" -l -r {} | xargs -I {} readlink -f {} | xargs -I {} egrep "loyal" -L {} | xargs -I {} cp {} .
+
+  $ find . -type f -name '*.*' | sed 's|.*\.||' | sort -u
+
+  // generate tags from all .py files
+  // --languages -> which context
+  // -f must be at the beginning
+  $ ctags -f "TAG_sf" -e -R --languages=Python ice-standard-functions/ 
+
+  // a comma separated row into a column
+  $ echo "a,b,c,d,e,f" | awk 'BEGIN{RS=","}{$1=$1}1'
+
+  // get the nth line from a file
+  $ sed -n '3p' <filename>
+
+  // add a link to fdfind
+  $ ln -s $(which fdfind) ~/.local/bin/fd
+
+  // pass cmd output as arg
+  https://unix.stackexchange.com/questions/108782/pass-the-output-of-previous-command-to-next-as-an-argument
+
+  //  Print out lines between 16224 and 16482 but exit on 16483
+  $ sed -n '16224,16482p;16483q' filename > newfile
+
+  // Move all files except ... into
+  $ mv !(avg_add) avg_add/
+
+  // 
+  $ xclip -selection clipboard < ~/.ssh/id_rsa.pub
+
+  // Screen recorder and vlc (player of .ogv)
+  https://askubuntu.com/questions/4428/how-can-i-record-my-screen
+  https://askubuntu.com/questions/639111/in-which-player-i-can-play-recordmydesktop-output-video-file-which-has-the-exte
+
+  // Recursively give all files inside a folder read only (usr)
+  chmod -R 500 ice-provider/  // Read only for the user
+  chmod -R 700 ice-provider/  // all 3 rights for the user
+
+** Git related
+   # Retract the read access from all files except for directories
+   $ find . -type f | xargs -I {} chmod -x {}
+
+
+
+*Python
+** Pytest
+[[https://zetcode.com/python/pytest/][Pytest intro: util, test, layout, fixure]]
+[[https://realpython.com/python-testing/#writing-integration-tests][Getting started with pytest]]
+[[https://stackabuse.com/test-driven-development-with-pytest/][How to use fixture to do integration test]]
+** Pandas
+   [[https://pypi.org/project/pandasql/][pandas sql]]
+** Problems 
+[[https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem][Diamond problem]]
+** Pyspark
+*** Github Reading
+    [[https://stackoverflow.com/a/51933027/3743027][approxQuantile as sql function]]
+    [[https://stackoverflow.com/questions/60008180/pyspark-count-on-pyspark-sql-dataframe-dataframe-takes-long-time][Why count on filter df takes more time]]
+    
+    [[https://pbpython.com/pandas-grouper-agg.html][Understand Grouper in groupby clause in pandas]]
+    [[https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.functions.date_trunc.html][Use date_trunc to do sampled times series in pyspark]]
+
+    [[https://stackoverflow.com/a/69067266/3743027][Explain shuffle sort merge join (without bucketing)]]
+    [[https://databricks.com/session/bucketing-in-spark-sql-2-3][Bucketing in Spark from Jacek Laskowski]]
+
+    [[https://stackoverflow.com/a/19131221/3743027][parition vs bucketing 1]]
+    [[https://stackoverflow.com/a/34124258/3743027][parition vs bucketing 2]]
+
+    [[https://stackoverflow.com/a/15331967/3743027][Why use partial]]
+*** Pyspark Context
+  from pyspark.context import SparkContext
+  from pyspark.sql.session import SparkSession
+  sc = SparkContext('local')
+  spark = SparkSession(sc)
+
+   
+  a = ivsr_previous_1_month_stats_model_code_all.withColumn('sum_last_month_sales', F.sum(F.col('last_month_sales')).over(partition))\
+                                              .withColumn('last_month_sales_perc', F.col('last_month_sales') / F.col('sum_last_month_sales') * 100)\
+                                              .drop('sum_last_month_sales')
+  Why [] not work as opposed to col
+
+  a = ivsr.withColumn('date', F.add_months(F.col('date'), 1)).withColumn('date', F.last_day(F.col('date')))
+
+*** Chaining UDFs using Transform
+    [[https://mungingdata.com/pyspark/chaining-dataframe-transformations/][Transform]]
+
+* MAC
+** Commands
+brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
+* Emacs
+** Emacs Hotkeys
+*** General
+    C-x C-r: open recent files
+    C-x C-t: tranpose -> swap the current line with the previous one
+    M-x align-regexp: then enter = -> expressions from diff lines will be aligned w.r.t =
+    M-: buffer-file-name: find the path of the file that is currently in the buffer
+    C-c C-x v: copy only the text from a hyperlink
+    C-x TAB: to shift blocks left or right
+    M-x copy-full-path-to-kill-ring: copy the filename of the buffer to kill ring
+    C-Shift-Backspace: delte the current line without kill ring
+    C-x C-l: lower case all letters in the selected region
+    C-x C-u: upper case all letters in the selected region
+    M-!: open a terminal in the current buffer for evaluation
+    M-x visit-tags-table: Load ctags table
+    C-x C-q: en/disable the read-only mode of the current buffer
+    C-x C-b: open the buffer list. D: delete flag X: execute the existing flags
+    C-?: find references of a definition (can either do it in either xref or lsp mode)
+*** LSP
+    // lsp resets home directory (reinitilize)
+    (lsp-workspace-folders-remove)
+    (lsp-workspace-folders-add)
+*** VTERM
+    M-x multi-vterm-project: create a VTERM with name based on the current dir
+    M-x multi-vterm-rename-buffer: change the name of the VTERM buffer
+*** Bookmark
+    [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Bookmarks.html][Bookmarks]]
+    C-x r m: set the bookmark at point
+    [[https://emacs.stackexchange.com/a/2813/33853][Helm: effectively use the mark ring]]
+*** Org Mode
+    [[https://orgmode.org/worg/orgcard.html][Reference Card]]
+    Capture: C-c c
+    Deadline: C-c C-d
+    Schedule: C-c C-s
+    Agenda: C-c a
+    Org-store-link: C-c l
+    Export (to .md, .html...): C-c C-e
+    Location of all current and archived to-do lists: [[file:index.org][index.org]]
+**** Structure Editing:
+     Promote/Demote headers: Select region + M-left/right
+   
+** Configuration
+   *** .emacs
+   *** early-init.el
+   [[file:~/.emacs.d/early-init.el][source file]]
+   [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Early-Init-File.html][Documentation]]
+
+   [[https://umarahmad.xyz/blog/editing-remote-code-with-emacs/][unison setup with emacs]]
+* Vim
+delete without copying to the kill ring: "_d
+
+* ICE Infrastructure
+  [[https://atc.bmwgroup.net/confluence/display/ICEC1/Pipeline+Layer+Structure][Pipeline Layer Structure]]
+* Docker
+  [[https://insights.sei.cmu.edu/blog/devops-and-docker/][DevOps and Docker (Podcast included)]]
+  [[https://faun.pub/docker-port-expose-and-publish-3470f4b49ccf][Reading EC2 tcp and docker port mapping]]
+* AWS
+** Reading
+   [[https://www.ithands-on.com/2020/11/virtualization-101-docker-vs-hypervisor.html][Hypervisor vs Docker = hardware-level vs OS-level virtualization]]
+   [[https://kuberty.io/blog/kubernetes-vs-aws-ecs/][kubernetes-vs-aws-ecs]]
+   [[https://techmagie.wordpress.com/tag/aws-glue/][Glue and ETL]]
+   [[https://d1.awsstatic.com/whitepapers/cost-modeling-data-lakes.pdf][AWS cost model data lakes, page 29]]
+   [[https://stackoverflow.com/a/70043134][AWS Glue Job: override boto3 in site-package]]
+   [[https://realpython.com/instance-class-and-static-methods-demystified/][class vs instance vs static methods]]
+** Hotkey
+   // [[https://github.com/aws/aws-cli/issues/2603][Create a s3 bucket]]
+   $ aws s3api create-bucket --bucket my-bucket-name --region us-west-2 --create-bucket-configuration LocationConstraint=us-west-2
+
+   //  [[https://docs.aws.amazon.com/cli/latest/reference/s3/mv.html][Move a local folder to a s3 buckete]]
+   $ aws s3 cp testgty/ s3://testgty-tooling/ --recursive
+
+   // Copy all files inside a folder to a local directory.
+   $ aws s3 cp s3://dynamic-pricing-poc/input_data/full_rossi_mt_20210609/* . --recursive
+
+   $ aws glue get-job --job-name $(aws glue list-jobs --max-results 300 | egrep "tianyi" | awk -F'"' '$0=$2') > glue_end_point_test.json
+   $ aws glue list-jobs --max-results 300 | egrep "tianyi" | awk -F '"' '$0=$2' | xargs -I {} aws glue delete-job --job-name {}
+   $ aws glue create-job --cli-input-json file://glue_end_point_test.json
+   $ aws glue start-job-run --job-name glue_end_point_test
+
+   # Sample data of a work flow logging in s3
+   $ aws s3 cp s3://$(aws s3 ls | egrep "logging" | cut -d ' ' -f3)/2022-01-21/data_flow/data_flow_f9ad04b9-674a-407f-b32c-0c5c25bdd95c_sem_nfz_categories_tianyi_test.csv -
+
+   $ aws s3 ls ice-logging-807535646066-eu-west-1/2022-01-21/data_flow/
+   // deliverables
+   $ aws s3 cp s3://aws-glue-scripts-540955489362-eu-west-1/glue-scripts/dataflow_yesterday.csv -
+   $ aws s3 cp s3://testgty-tooling/glue_test/dataflow.csv .
+
+   recordmydesktop --device pulse --width 1080 --height 1080 --v_bitrate 2000000 --s_quality 10 --delay 1 --fps 20 --overwrite --device plughw:0,0 --no-wm-check --buffer-size 65538 --freq 48000 --quick-subsampling --on-the-fly-encoding -o timefinder-v4-screencast.ogv
+** S3
+*** Landing Zone
+    Location of landing zone in S3 for different accounts:
+    [[ext+container:name=provider_DEV&url=https://s3.console.aws.amazon.com/s3/buckets/cdh-de-sales-landing-zone-src-tb7c/?region=eu-west-1&tab=objects][[provider_DEV] Landing Zone in S3]]
+    [[https://s3.console.aws.amazon.com/s3/buckets/cdh-de-sales-landing-zone-pre-vj2h?region=eu-west-1&tab=objects][[fconsumer_DEV] Landing Zone in S3]]
+
+** Glue
+   [[https://stackoverflow.com/a/50498934/3743027][Run glue script from Glue Dev Endpoint]]
+   [[https://support.wharton.upenn.edu/help/glue-debugging][Test python glue job locally]]
+   [[https://github.com/awsdocs/aws-glue-developer-guide/blob/master/doc_source/add-job-python.md][Create a .whl for .py]]
+   [[https://aws-blog.de/2021/06/what-i-wish-somebody-had-explained-to-me-before-i-started-to-use-aws-glue.html][What I wish somebody had explained to me before I started to use AWS Glue]]
+   [[https://www.bmc.com/blogs/amazon-glue-crawler/][Glue Crawler Exercise]]
+** IAM Role
+   [[https://stackoverflow.com/a/43948241][Explains how IAM works and policy work together: eg, cloud watch log -> Kinesis Firehose]]
+   [[https://medium.com/geekculture/programming-aws-iam-using-aws-python-sdk-boto3-part-4-62f2f1c21584][Cross account access: trusting <-> trusted accounts]]
+* Terraform
+** Run terraform module on tooling
+   cd cicd  # Cant be in account_setup -> trigger in the dev int prod
+   git pull origin develop
+   role tooling
+   terraform workspace select tooling-tianyi
+   terraform init --backend-config=backend-config.hcl
+   terraform apply --var-file=env_vars/tooling-tianyi.tfvars
+
+   aws glue start-job-run --job-name daily_mail
+** Tutorials
+   [[https://learn.hashicorp.com/tutorials/terraform/aws-build][Explain some resource from coding blocks]]
+
+   [[https://www.reddit.com/r/Terraform/comments/fs7176/what_is_the_current_solution_for_backend/][export TF_CLI_ARGS_init="-backend-config=backend.hcl"]]
+   
+
+* Preinstall
+* Interview
+** Levis
+Python 3.9: Assignment expressions, Positional-only parameters, datetime.date.fromisocalendar(), zoneinfo
+
+spark client vs cluster mode: client -> driver program on the local machine (good for monitoring), 
+cluster -> driver runs on a work node on the cluster together with the executor (faster, network latency reduced)
+
+pandas 1.0 (from 0.x): [[https://www.analyticsvidhya.com/blog/2020/01/pandas-version-1-top-4-features/][major changes]]: 1. dedicated string type 2. Unified scalar for missing value: pd.NA vs (pd.NaT: category, np.nan: int)
+3. pd_df.to_markdown() <- tabulated table
+Spark 3.0: Scalar Pandas UDFs (row at a time vs series), 
+Ref: [[https://databricks.com/blog/2020/05/20/new-pandas-udfs-and-python-type-hints-in-the-upcoming-release-of-apache-spark-3-0.html][Spark 3.0 What's New]], [[https://databricks.com/blog/2017/10/30/introducing-vectorized-udfs-for-pyspark.html][Pandas UDF in Spark (vs row-at-a-time)]]
+
+1. Type inference
+# long: type of an element in series, pandas_udf: pd.series -> pd.series (infer from pandas func)
+@pandas_udf('long')
+def pandas_plus_one(s: pd.Series) -> pd.Series:
+    return s + 1
+2. New API to take in pandas func on spark df
+# Support of pandas API in spark (applyInPandas) instead of using pandas_udf
+3. dynamic partition pruning
+
+[[https://www.bwl.wi.tum.de/wp-content/uploads/2021/03/Thesis_DataGovernance_BMWGroup_ManuelLutz.pdf][data governance (associated with federated learning)]]
+
+[[https://www.pythontutorial.net/python-oop/python-liskov-substitution-principle/][Python Liskov Substitution Principle: class and its inheritance]]
+
+[[https://github.com/heykarimoff/solid.python/blob/master/3.lsp.py][lsp coding examples]]
+
+[[https://www.youtube.com/watch?v=b4iFyrLQQh4][Auto-Generated Python Documentation with Sphinx]]
+
+for technical round:
+
+·  You will walk-through the challenge and explain why and how you did it, he might ask questions on why did you choose this approach and if there is any way to optimise the solution.
+
+·  Questions on the different technology stack like airflow, databricks, python, pandas, spark etc.
+
+·  Important question: Version you are using in python/pandas/spark, what’s new in that what vs was in previous version or what’s something you liked in the recent upgrade you are using.
+
+·  Your experience in  building data pipelines on cloud & orchestration
+
+·  Questions based on your CV and past experience.
+
+·  The key for the client is also the way you speak with them, and how good you gel with them
+
+· Look at Ci/CD tools you have used before. Ex: Deployment of dag on
+airflow, or jenkins
+
+·  100% be sure you have a look at the spark 2.0 vs spark 3.0 , same for python.
+
+·  Look into data governance, and why is it needed and how it works?
+
+·  Coding standards: PeP8
+
+·  Data quality check & code quality check tools
+
+please look well in to GIT and operations like cherrypicking and other
+complex git operations. Validation tools are a must(ex: great
+expectation), code quality(ex:ide, or if there is any other)
+
+data quality/validation check: great expectation -> null val, schema, df shape, numeric values in range
+code + data documentation
+[[https://www.youtube.com/watch?v=f901OJrP5ls][data documentation]]
+* Ski
+** Redster
+[[https://www.ebay.de/itm/353479460639?hash=item524d04871f:g:9gcAAOSwLuBiBsHi][Redster G9 Specs]]
+
+** Italy
+[[https://www.skiinfo.de/italien/saisonende-skigebiet][End of Season of ski resorts in Italy]]
+
+* Reply
+** General info
+Payslipe: https://payslip.reply.de
+remote gateway: 194.15.211.202
+vpngate.reply.de
+
+* OCW
+** CMU 15-445/645 Intro to Database Systems (Fall 2019)
+[[https://15445.courses.cs.cmu.edu/fall2019/schedule.html][Class link]]
+[[https://github.com/epis2048/cmu_15445_2021/blob/ghess/p2-refinement/src/buffer/buffer_pool_manager_instance.cpp][Github Code]]
+*** Demo
+[[https://programming.guide/robin-hood-hashing.html][Robinhood hashing: insert, search and delete]]
+[[https://programming.guide/cuckoo-hashing.html][Cuckoo Hashing]]
+[[https://15445.courses.cs.cmu.edu/fall2019/slides/06-hashtables.pdf][Extendible Hashing: slide #29]]
+[[https://15445.courses.cs.cmu.edu/fall2019/slides/06-hashtables.pdf][Linear Hashing: slide #31]]
+*** Lab1
+[[https://www.inlighting.org/archives/cmu-15-445-notes/][RoundRobinNewPage Trick: AllocatePage]]
+
+* Levis
+** Video Recording
+[[https://levi-my.sharepoint.com/personal/kkirange_levi_com1/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fkkirange%5Flevi%5Fcom1%2FDocuments%2FRecordings%2FCall%20with%20Duran%20and%201%20other%2D20220422%5F085002%2DMeeting%20Recording%2Emp4&parent=%2Fpersonal%2Fkkirange%5Flevi%5Fcom1%2FDocuments%2FRecordings&ga=1][Jaime walked through a typical jira ticket: sql + dll + db-map + emr]]
+** AWS
+*** EC2
+// ssh into ec2
+cd ~/.ssh && sudo ssh -i "lse-multipage-app.pem" ec2-user@10.240.157.59
+cd ~/projects/streamlit-multipage-app/ && source .venv/bin/activate
+
+sudo yum update -y
+sudo yum groupinstall "Development Tools" -y
+sudo yum install openssl11 openssl11-devel  libffi-devel bzip2-devel wget -y
+wget https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tgz
+tar -xf Python-3.10.4.tgz
+cd Python-3.10.4/
+./configure --enable-optimizations
+sudo make altinstall
+
+
+
+** Convention
+   LSEDE-3213-vir-add-job-reservation (branch name), commit also has a convention; modify the md file; db diagram
+   79 char
+** Link
+[[https://levistrauss.atlassian.net/jira/software/c/projects/LSEDE/boards/990?assignee=62569b0656e5a8006dd9b4ad][My LSEDE Primary Jira Scrum Board]]
+[[https://levistrauss.atlassian.net/wiki/spaces/LDAA/pages/1478492477/Guidelines+and+how-to+tutorials][LSE Tutorials, Videos, Guideslines and Onboarding Stuff]]
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375426111/DE+GAO+holiday][Holiday Planning DE GAO]]
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2376698475/DE+GAO+All+Accesses+to+Request][Levis links for request onboarding]]
+[[https://levi.service-now.com/services?id=sc_cat_item&sys_id=04e418bfec021a40493f543a842aadd3][Add or Remove Users to Active Directory Group]]
+[[https://www.reetro.app/board/5fb456a73dbc220016938187/625ff5cac1c782001772870c][reetro sprint retro]]
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2375423458/DE+GAO+Onboarding][DE GAO Onboarding]]
+[[https://lse-sphinx.aws.levi.com/lse_airflow_datalake/lse_airflow_datalake.html][LSE Data Catalog]]
+[[https://3257530455382263.3.gcp.databricks.com/?o=3257530455382263#setting/clusters][LSE Databricks]]
+[[https://console.cloud.google.com/storage/browser?authuser=2&project=levi-dataocean-pp&prefix=][Levi Dataocean Preprod]]
+[[https://10.102.144.15:11000/home/][Dataiku Temporary GCP]]
+[[https://dataiku-dev.levi.com/home/][AWS Dataiku Dev]]
+[[https://dataiku-prod.levi.com/project-list/][AWS Dataiku Prod]]
+[[https://levistrauss.atlassian.net/wiki/spaces/GDAAI/pages/2416804330/GA.+App+Maintenance][Streamlit docker confluence]]
+[[https://towardsdatascience.com/continuous-deployment-pipeline-using-github-actions-docker-and-aws-185bb3bf41b][Docker AWS GITHUB]]
+[[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html][How to use an external ID when granting access to your AWS resources to a third party]]
+[[https://support.cloudbees.com/hc/en-us/articles/360027893492-How-To-Authenticate-to-AWS-with-the-Pipeline-AWS-Plugin][How To Authenticate to AWS with the Pipeline AWS Plugin]]
+[[https://faun.pub/docker-build-push-with-declarative-pipeline-in-jenkins-2f12c2e43807][Push to ECR from Jenkins]]
+[[https://stackoverflow.com/a/61933740/3743027][ECR credentials]]
+[[https://stackoverflow.com/questions/70698829/cannot-access-a-docker-webapp-on-ec2-from-a-web-browser][Build and run a docker on EC2]]
+[[https://levistrauss.atlassian.net/wiki/spaces/CDI/pages/823007847/Build+docker+image+and+publish+to+ECR][Jenkines Code: Build docker image and publish to ECR]]
+[[https://levi.sharepoint.com/:x:/s/GlobalPricePromo/Ee4c9spHpahFlmch4NuZAygBYk8AI-8I5YGAMybi-nofqg][Dataiku migration dataset excel]]
+** Existing roles
+res-gcp-levi-okta,
+res-sec-vpn-gcp,
+res-app-okta-terraform-access,
+res-gcp-aiml-dataengineer,
+res-gcp-aiml-dataengineer-airflowuser,
+res-gcp-levi-dataeng-d-dataengineer,
+res-gcp-aiml-lse-dataengineer,
+res-CloudBeesOrg-DAC-Developer,
+res-CloudBeesOrg-LDAC-Developer,
+res-gcp-dataiku-lse-designers,
+res-gcp-dataiku-lse-Explorers,
+res-gcp-dataiku-lse-pp-designers,
+res-gcp-dataiku-lse-pp-Explorers
+
+
+** People to ask for help
+IT (VPN, Access ...): (Asia) Kumar, Mithun; Karuppusamy, Thiyagarajan
+(US) Akash Gupta, Catherine G rithika
+
+* Docker
+# Delete all images
+$ docker rmi $(docker images -a -q)
+$ sudo docker rmi $(sudo docker images -a -q)
+# Delete all containers
+$ docker rm -f $(docker ps -a -q)
+$ sudo docker rm -f $(sudo docker ps -a -q)
+
+$ push_docker_to_ecr_preprod.sh $AWS_PREPROD_DEV_ID cotton-price-webapp
+$ docker pull $AWS_PREPROD_DEV_ID.dkr.ecr.us-west-2.amazonaws.com/cotton-price-webapp:latest
+$ docker run -p 5000:5000 165868383646.dkr.ecr.us-west-2.amazonaws.com/cotton-price-webapp:latest
+* Backup
+** Folders on the Reply-Mac-Temp
+/Users/t.ge/.local/bin/
+
+$ docker pull 165868383646.dkr.ecr.us-west-2.amazonaws.com/cotton-price-webapp:latest
+$ docker run -p 5000:5000 165868383646.dkr.ecr.us-west-2.amazonaws.com/cotton-price-webapp:latest
+http://10.240.157.59:5000/
+
+# Allow ec2 to access ecr
+# login in ecr and pull
+sudo $(aws ecr get-login --no-include-email --region us-west-2)
+sudo docker pull 165868383646.dkr.ecr.us-west-2.amazonaws.com/cotton-price-webapp:latest
+
+# pull from ecr to ec2 -> iam role and login
+COTTON-PRICE-WEBAPP
+
+sudo su -
+exit
+
+* Levis task
+# Industrialize pipelien etl, howard
+https://github.levi-site.com/GAI/AIRFLOW_FEATURE_STORE/pull/33/files
+
+
+lse_price_promo_elasticity
+
+from lse_price_promo_elasticity.src.data import preprocessing
+
+preprocessing.main()
+
+# input 1
+HANA_ProductMaster_copy_prepared_joined_prepared_copy = 
+/prod/PPELASTICITYCURVESPROD/HANA_ProductMaster_copy_prepared_joined_prepared_copy/out-s0.csv.gz
+
+what
+
+Indlustrilized the EU data which are still living in Dataiku into modern airflow ETL pipelines in Feature Store. 
+
+Scope:
+
+s3://lse-ds-preprod/LSE_PRICE_PROMO_OPTIMIZATION/Inbound/Products/Product_Master_From_Elasticity_Curves/
+
+s3://lse-ds-preprod/boto3/PPELASTICITYCURVES/stage/product_master_from_elasticity_curves/
+https://dataiku-dev.levi.com/projects/PPELASTICITYCURVES/datasets/product_table/settings/
+
+why
+
+Warm for Dataiku to be deprecated in Sep. 2023
+
+how
+
+    Understand current data in DATAIKU: which UC, which Projects, who are clients
+
+    if Dataiku Data ETL biz logical simple, convert (lift & shift) into the airflow
+
+    if Dataiku Data ETL biz logical complex,
+
+        Sync with related DSs about what the data/info they really need (maybe 2 columns out of 100)
+
+        design and build ETL solutions using Airflow GDO or Feature Store
+
+        release in prod, work with DSs to switch data dependency
+
+airflow/dags/ext_aur_lse_rmo_ship_cost_dc_dmd.py
+
+only to py file
+
+from utils.callback_functions import send_error_email, teams_notify_fail
+from utils.callback_functions import send_error_email
+
+on_failure_callback=partial(send_error_email, DEFAULT_ARGS.get("email")),
+
+pcregrep -M "on_failure_callback.*\n.*\)," * | egrep "\.*py\:"
+
+                on_failure_callback=partial(
+                    teams_notify_fail,
+                    "teams_chatops_conn",
+                ),
+
+$ pcregrep -l -M "on_failure_callback.*\n.*teams_notify_fail" * | egrep "py"
+
+from utils.callback_functions import (
+    send_error_email,
+    teams_notify_fail,
+)
+
+
+perl -0777 -pe 's/on_failure_callback.*\n.*teams_notify_fail.*\n.*teams_chatops_conn.*\n.*\),/1234,/' ext_api_lse_cms_nav_menu_dly.py
+
+perl -0777 -pe 's/on_failure_callback.*\n.*teams_notify_fail.*\n.*teams_chatops_conn.*\n.*\),/abcdefghijk/g' /Users/t.ge/Documents/work/Levis/tasks/LSE_AIRFLOW_DATALAKE/airflow/dags/ext_oms_lse_inv_i_availability_5_snapshot_dly_06utc.py | sed '/abcdefghijk/d' | perl -0777 -pe 's/from utils\.callback_functions.*\n.*\n.*\n.*\)/from utils\.callback_functions import teams_notify_fail/'
+
+# Delete multi-line teams in step
+perl -0777 -pe 's/on_failure_callback.*\n.*teams_notify_fail.*\n.*teams_chatops_conn.*\n.*\),/abcdefghijk/g' /Users/t.ge/Documents/work/Levis/tasks/LSE_AIRFLOW_DATALAKE/airflow/dags/ext_oms_lse_inv_i_availability_5_snapshot_dly_06utc.py | sed '/abcdefghijk/d'
+
+# replace multiple import with single import
+perl -0777 -pe 's/from utils\.callback_functions.*\n.*\n.*\n.*\)/from utils\.callback_functions import teams_notify_fail/' /Users/t.ge/Documents/work/Levis/tasks/LSE_AIRFLOW_DATALAKE/airflow/dags/ext_oms_lse_inv_i_availability_5_snapshot_dly_06utc.py
+
+on_failure_callback=partial(
+    send_error_email,
+    DEFAULT_ARGS.get("email"),
+),
+# Replace multiline email with teams
+perl -0777 -pe 's/on_failure_callback.*\n.*error.*\n.*DEFAULT.*\n.*\),/on_failure_callback\=partial(teams_notify_fail, \"teams_chatops_conn\",),/' lod_oms_hyb_seg_lse_ecom_purord_line_item_dly.py
+
+# replace a single line import with email and teams with only teams
+sed 's/from utils\.callback_functions.*email.*/from utils\.callback_functions import teams_notify_fail/' rlod_oms_lse_inv_i_availability_5_once.py
+
+# replace email in the dag config with teams
+on_failure_callback=partial(send_error_email, DEFAULT_ARGS.get("email")),
+sed 's/on_failure_callback.*send_error_email.*DEFAULT.*/on_failure_callback\=partial(teams_notify_fail, \"teams_chatops_conn\",),/' rlod_oms_lse_inv_i_availability_5_once.py
+
+
+fd -I py$ | xargs perl -0777 -pe 's/on_failure_callback.*\n.*teams_notify_fail.*\n.*teams_chatops_conn.*\n.*\),/abcdefghijk/g' {} | sed 's/on_failure_callback.*send_error_email.*DEFAULT.*/on_failure_callback\=partial(teams_notify_fail, \"teams_chatops_conn\",),/' | sed 's/from utils\.callback_functions.*email.*/from utils\.callback_functions import teams_notify_fail/' | perl -0777 -pe 's/from utils\.callback_functions.*\n.*\n.*\n.*\)/from utils\.callback_functions import teams_notify_fail/' 
+
+source data
+
+
+/prod/PPELASTICITYCURVESPROD/HANA_ProductMaster_copy_prepared_joined_prepared_copy/out-s0.csv.gz
+/prod/JOB_RETAIL_EC_COUNTRY/LSE_FACT_LSE_POS_Sales_Daily_Partitioned_Weekly_2019_2020
+/prod/PPELASTICITYCURVESPROD/Merch_Conso_copy/out-s0.csv.gz
+/prod/PPELASTICITYCURVESPROD/lse_cdh_eu_purchase_orders_line_item_copy_sample/out-s0.csv.gz
+/prod/PPELASTICITYCURVESPROD/20180621_currency_translation_rates_w_eur_copy/out-s0.csv.gz
+/prod/JOB_RETAIL_EC_COUNTRY/Global_Retail_Store_Attributes_Updated/out-s0.csv.gz
+
+/boto3/PPELASTICITYCURVES/stage/product_master_from_elasticity_curves
+
+product_master:
+s3://dataiku-prod/prod/LSE_DIM_PRODS/HANA_ProductMaster_copy_prepared_joined_prepared/*
+conso_levi:
+s3://dataiku-prod/prod/DATAENGINEERINGCONSO/CONSO_DataEngineering/*
+
+myedit PRODUCT_MASTER_FROM_ELASTICITY_CURVES
+
+# preprocessing
+https://dataiku-dev.levi.com/projects/PPELASTICITYCURVES/libedition
+
+# Ketan Hana schema
+https://github.levi-site.com/GAI/AIRFLOW_FEATURE_STORE/blob/6f7c4befedf6c3056d5a0946a4425885587ccd34/sql/ddl/FEAT_PP_L1/HANA_PRODUCT_MASTER_COPY_WITH_HEADERS.sql
+
+perl -i -pe 'BEGIN{undef $/;} s/\"email\"\:(.*?)\]\,/bgbzmhqinahzmacubrfxozpeiiskirtx/smg' lod_oms_hyb_seg_lse_ecom_purord_line_item_dly.py | sed '/bgbzmhqinahzmacubrfxozpeiiskirtx/d'
+
+$ okta-awscli --okta-profile dsp --profile okta
+
+
+conda activate airflow2
+/home/ec2-user/miniconda3/envs/airflow2/lib/python3.8/site-packages/emr_operators/_files
+
+pip uninstall emr-operators
+pip install git+ssh://github_airflow_emr_control_temp/GAI/AIRFLOW_EMR_CONTROL.git@feature/LSEDE-3531-create-data-validation-operator
+
+cat /home/ec2-user/miniconda3/envs/airflow2/lib/python3.8/site-packages/emr_operators/control/spark_sql.py 
+
+
+Broken DAG: [/home/ec2-user/AIRFLOW_FEATURE_STORE/airflow/dags/lod_onec_cost_pc9_ru_dly.py] Traceback (most recent call last):
+  File "/home/ec2-user/miniconda3/envs/airflow2/lib/python3.8/site-packages/emr_operators/__init__.py", line 2, in <module>
+    from . import control
+  File "/home/ec2-user/miniconda3/envs/airflow2/lib/python3.8/site-packages/emr_operators/control/__init__.py", line 3, in <module>
+    from .run_script import RunScript
+  File "/home/ec2-user/miniconda3/envs/airflow2/lib/python3.8/site-packages/emr_operators/control/run_script.py", line 290
+    except Exception as error:
+                             ^
+IndentationError: unindent does not match any outer indentation level
+Broken DAG: [/home/ec2-user/AIRFLOW_FEATURE_STORE/airflow/dags/unload_sql_dly.py] Traceback (most recent call last):
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ec2-user/AIRFLOW_FEATURE_STORE/airflow/dags/unload_sql_dly.py", line 7, in <module>
+    from emr_operators.control import DeployEMR, RunScript, KillEMR, UnloadSQL
+ImportError: cannot import name 'DeployEMR' from 'emr_operators.control' (unknown location)

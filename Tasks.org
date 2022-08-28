@@ -1,0 +1,19 @@
+* Active
+** DONE Finish documentation
+CLOSED: [2022-06-15 Wed 00:00] SCHEDULED: <2022-06-15 Wed>
+:LOGBOOK:
+- State "DONE"       from "GOAL"       [2022-06-15 Wed 00:00]
+:END:
+
+** TODO Learn with Ketan!
+SCHEDULED: <2022-06-17 Fri>
+:LOGBOOK:
+- State "DONE"       from "BACKLOG"    [2022-06-14 Tue 23:59]
+:END:
+
+** TODO Check the color and format of org agenda to-do 
+** TODO Start [[https://www.youtube.com/watch?v=PNE-mgkZ6HM][Emacs from scratch org agenda]] at the 30:00 mark 
+SCHEDULED: <2022-06-16 Thu>
+* Backlog
+** TODO AGR app upgrade 
+
